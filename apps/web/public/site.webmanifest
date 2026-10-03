@@ -1,0 +1,17 @@
+{
+  "name": "Vishal // Digital Universe",
+  "short_name": "Vishal",
+  "description": "A cinematic, data-driven personal portfolio.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05060A",
+  "theme_color": "#F2F4F8",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}
