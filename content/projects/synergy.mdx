@@ -1,0 +1,64 @@
+---
+schemaVersion: 1
+id: synergy
+title: "Synergy"
+tagline: "Campus Intelligence & Placement OS connecting Students, Faculty, and Recruiters."
+status: published
+period:
+  start: "2025-06"
+  end: "2025-11"
+tags: [fullstack, nextjs, react, typescript, backend]
+stack: [Next.js, React, TypeScript, Tailwind CSS, Node.js, REST API]
+repo: "vishalgastu30/synergy"
+links: []
+visibility:
+  website: true
+  resume: true
+  timeline: true
+  featured: true
+resumeWeight: 4
+bullets:
+  - text: "Built a full-stack, role-based campus platform connecting Students, Faculty, Management, and Recruiters through verified skill tracking and placement analytics."
+    tags: [fullstack, nextjs, typescript]
+    variants:
+      fullstack-developer: "Developed a comprehensive role-based campus OS using Next.js and Node.js, integrating skill tracking and real-time analytics."
+      backend-engineer: "Architected the backend for a campus placement OS, ensuring secure role-based access for students, faculty, and recruiters."
+  - text: "Designed faculty-verification workflows, cohort analytics dashboards, and recruiter talent-discovery pipelines with real-time readiness scoring."
+    tags: [fullstack, backend]
+    variants:
+      fullstack-developer: "Designed and implemented faculty-verification workflows and real-time analytics dashboards for talent discovery."
+  - text: "Implemented five role-specific portals with a shared design system, mock-data interceptors, and a staged REST API integration layer."
+    tags: [frontend, react, typescript]
+    variants:
+      fullstack-developer: "Built five role-specific portals using a unified design system and robust REST API integration layer."
+scene:
+  artifact: "crystal-02"
+  accent: "#4A90E2"
+media: []
+updatedAt: "2026-10-03"
+---
+
+## Problem
+
+Campus placement processes involve massive amounts of fragmented data spread across students, faculty, and recruiters. Tracking verified skills and managing placement pipelines manually was inefficient and prone to data loss.
+
+## Constraints
+
+- Required handling five distinct user roles with highly asymmetric data access permissions.
+- Needed to provide real-time analytics on cohort readiness without bogging down the database.
+- Must ensure a unified user experience despite the fragmented underlying data.
+
+## Key decisions
+
+- Built with Next.js and TypeScript to share types across the frontend and the mock/staged API layer, preventing runtime type mismatches.
+- Implemented a unified design system using Tailwind CSS to guarantee visual consistency across all five role-specific portals.
+- Used mock-data interceptors early in development to parallelize frontend and backend work streams efficiently.
+
+## Architecture
+
+[Placeholder for Phase 5 — the 3D diagram lives here]
+
+A brief written description of how the system fits together:
+- **Client layer:** Next.js application serving five distinct role-based portals.
+- **API layer:** Node.js REST API handling authentication, role verification, and analytics.
+- **Data flow:** Student skill updates trigger faculty verification workflows, feeding into the recruiter talent-discovery pipeline.

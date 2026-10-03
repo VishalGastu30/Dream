@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: fullstack-developer
+label: "Full-Stack Developer"
+targetPages: 1
+tagWeights:
+  fullstack: 3
+  frontend: 2
+  backend: 2
+  react: 2
+  nextjs: 2
+  typescript: 2
+sectionLimits:
+  projects: 3
+  experience: 3
+  certifications: 3
+  achievements: 3
+  skills: 12
+pin: ["synergy", "qube-cinema-intern"]
+exclude: []
+summaryVariant: fullstack-developer

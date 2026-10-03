@@ -1,0 +1,20 @@
+schemaVersion: 1
+id: ai-engineer
+label: "AI Engineer"
+targetPages: 1
+tagWeights:
+  ai: 3
+  ml: 3
+  python: 2
+  research: 2
+  fullstack: 0.5
+  mobile: 0
+sectionLimits:
+  projects: 3
+  experience: 3
+  certifications: 3
+  achievements: 3
+  skills: 12
+pin: ["craft", "urop-srmist"]
+exclude: []
+summaryVariant: ai-engineer

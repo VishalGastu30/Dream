@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: nptel-oop
+title: "Object-Oriented Programming (75%)"
+issuer: "NPTEL"
+period:
+  start: "2025-01"
+  end: null
+status: published
+tags: [java]
+visibility:
+  website: true
+  resume: true
+  timeline: false
+  featured: false
+resumeWeight: 1
+updatedAt: "2026-10-03"

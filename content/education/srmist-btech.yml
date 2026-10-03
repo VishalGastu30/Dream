@@ -1,0 +1,19 @@
+schemaVersion: 1
+id: srmist-btech
+degree: "B.Tech in Computer Science and Engineering"
+institution: "SRM Institute of Science and Technology"
+location: "Kattankulathur, Tamil Nadu"
+period:
+  start: "2024-08"
+  end: "2028-05"
+gpa: "8.53 / 10.0"
+status: published
+tags: [computer-science, software-engineering]
+visibility:
+  website: true
+  resume: true
+  timeline: true
+  featured: false
+highlights:
+  - "Core coursework: Data Structures & Algorithms, OOP, DBMS, Operating Systems, Computer Networks"
+updatedAt: "2026-10-03"

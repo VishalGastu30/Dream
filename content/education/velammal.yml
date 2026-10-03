@@ -1,0 +1,18 @@
+schemaVersion: 1
+id: velammal
+degree: "Class X (CBSE)"
+institution: "Velammal New Gen School"
+location: "Chennai, Tamil Nadu"
+period:
+  start: "2020-06"
+  end: "2022-05"
+gpa: "89%"
+status: published
+tags: []
+visibility:
+  website: false
+  resume: true
+  timeline: false
+  featured: false
+highlights: []
+updatedAt: "2026-10-03"

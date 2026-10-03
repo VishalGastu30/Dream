@@ -1,0 +1,21 @@
+schemaVersion: 1
+id: backend-engineer
+label: "Backend Engineer"
+targetPages: 1
+tagWeights:
+  backend: 3
+  go: 3
+  python: 2
+  sql: 2
+  postgres: 2
+  fullstack: 1
+  ai: 0.5
+sectionLimits:
+  projects: 3
+  experience: 3
+  certifications: 3
+  achievements: 3
+  skills: 12
+pin: ["qube-cinema-intern"]
+exclude: []
+summaryVariant: backend-engineer

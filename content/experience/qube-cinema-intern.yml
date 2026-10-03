@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: qube-cinema-intern
+title: "Full Stack Engineer Intern"
+organization: "Qube Cinema Technologies"
+location: "Chennai, Tamil Nadu · Remote"
+type: internship
+period:
+  start: "2026-07"
+  end: "2026-08"
+status: published
+tags: [go, postgres, backend, fullstack, sql]
+visibility:
+  website: true
+  resume: true
+  timeline: true
+  featured: false
+resumeWeight: 4
+bullets:
+  - text: "Built JWT-authenticated REST APIs in Go with PostgreSQL-backed reporting workflows for enterprise-grade cinema distribution software."
+    tags: [go, postgres, backend]
+    variants:
+      backend-engineer: "Built JWT-authenticated REST APIs in Go with PostgreSQL; designed enterprise reporting workflows."
+      fullstack-developer: "Developed end-to-end reporting modules with a Go/PostgreSQL backend and a React/Next.js frontend."
+  - text: "Applied SQL optimization, indexing, complex joins, and parameterized queries to keep reporting fast and reliable at scale."
+    tags: [sql, postgres, backend]
+    variants:
+      backend-engineer: "Optimized data access at scale using advanced SQL indexing, complex joins, and parameterized queries."
+  - text: "Delivered Release and Mapped CPL reporting modules within a layered Handler–Service–Repository architecture, pairing the Go backend with a React/Next.js frontend."
+    tags: [go, react, nextjs, fullstack]
+    variants: {}
+updatedAt: "2026-10-03"

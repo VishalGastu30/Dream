@@ -1,0 +1,31 @@
+schemaVersion: 1
+id: urop-srmist
+title: "Undergraduate Research - AI Agent Safety"
+organization: "SRM Institute of Science and Technology"
+location: "Kattankulathur, Tamil Nadu"
+type: part-time
+period:
+  start: "2026-01"
+  end: null
+status: published
+tags: [python, ai, research, security]
+visibility:
+  website: true
+  resume: true
+  timeline: true
+  featured: false
+resumeWeight: 4
+bullets:
+  - text: "Designing a runtime monitoring and enforcement framework that grades AI-agent reasoning and actions against SOPs and blocks unsafe actions."
+    tags: [ai, security, research]
+    variants:
+      ai-engineer: "Designing verifiable runtime enforcement frameworks for AI agents to guarantee SOP compliance and block unsafe actions."
+      ml-research: "Researching verifiable observability for AI agents; designing runtime compliance monitors blocking unsafe trajectory actions."
+  - text: "Architected a four-stage pipeline: Strategy Profiler, Rule Bank, Constraint Compliance Monitor, and Metrics Engine, backed by a trajectory store."
+    tags: [ai, backend, python]
+    variants:
+      backend-engineer: "Architected a four-stage runtime validation pipeline backed by an auditable trajectory store."
+  - text: "Built a literature survey spanning 20+ papers on LLM-agent safety, runtime enforcement, and constraint drift to position the work for publication."
+    tags: [research, ai]
+    variants: {}
+updatedAt: "2026-10-03"

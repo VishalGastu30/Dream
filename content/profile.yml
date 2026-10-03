@@ -1,0 +1,29 @@
+schemaVersion: 1
+id: vishal-gastu
+name: "Vishal Gastu"
+displayName: "VISHAL GASTU"
+title: "AI Engineer & Software Developer"
+email: "vishalgastu30@gmail.com"
+location: "Chennai, Tamil Nadu"
+openToOpportunities: true
+github: "vishalgastu30"
+linkedin: "vishal-gastu"
+website: "https://vishalgastu.pages.dev"
+
+tagline: "Creating what doesn't exist yet, and building it well enough to change what comes next."
+
+summaries:
+  general: >
+    Computer Science undergraduate with hands-on experience in AI/ML, LLM engineering, and production-oriented software development. Experienced in fine-tuning LLMs alongside building robust REST APIs and backend services in Go and Python.
+  ai-engineer: >
+    AI Engineer experienced in fine-tuning and evaluating LLM systems with PyTorch, GRPO, and QLoRA. Currently researching runtime safety monitoring for AI agents, focused on taking systems from experimentation to deployable applications.
+  backend-engineer: >
+    Backend Engineer experienced in building maintainable REST APIs, PostgreSQL data access, and full-stack systems. Proven ability to optimize SQL, implement layered architecture, and debug production workflows at scale.
+  fullstack-developer: >
+    Full-Stack Developer experienced in integrating React/Next.js frontends with robust Go and Python backends. Capable of building scalable web platforms, offline-first mobile applications, and secure data pipelines.
+
+bio:
+  short: "Vishal Gastu is a Computer Science undergraduate at SRMIST, specializing in AI/ML engineering, LLM fine-tuning, and scalable full-stack development."
+  long: "Vishal Gastu is an AI Engineer and Software Developer currently pursuing a B.Tech in Computer Science at SRM Institute of Science and Technology. He has hands-on experience fine-tuning small language models, building runtime safety monitors for AI agents, and developing enterprise-grade backend systems in Go. Vishal is passionate about taking complex AI architectures from raw experimentation to reliable, deployable products."
+
+updatedAt: "2026-10-03"

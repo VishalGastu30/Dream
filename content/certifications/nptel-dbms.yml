@@ -1,0 +1,16 @@
+schemaVersion: 1
+id: nptel-dbms
+title: "Database Management Systems (65%)"
+issuer: "NPTEL"
+period:
+  start: "2025-01"
+  end: null
+status: published
+tags: [sql]
+visibility:
+  website: true
+  resume: true
+  timeline: false
+  featured: false
+resumeWeight: 1
+updatedAt: "2026-10-03"

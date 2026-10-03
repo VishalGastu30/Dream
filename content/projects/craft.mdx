@@ -1,0 +1,68 @@
+---
+schemaVersion: 1
+id: craft
+title: "CRAFT"
+tagline: "Adaptive Fine-Tuning for Small Language Models using GRPO, QLoRA, and self-supervised learning."
+status: published
+period:
+  start: "2026-01"
+  end: "2026-05"
+tags: [ai, python, pytorch, huggingface, research]
+stack: [Python, PyTorch, HuggingFace, TRL, GRPO, QLoRA, GGUF]
+repo: "vishalgastu30/craft"
+links: []
+visibility:
+  website: true
+  resume: true
+  timeline: true
+  featured: true
+resumeWeight: 5
+bullets:
+  - text: "Built a four-phase fine-tuning framework combining GRPO-based reinforcement learning, QLoRA, step-level self-supervised contrastive learning, and adaptive curriculum learning."
+    tags: [ai, research, python, pytorch]
+    variants:
+      ai-engineer: "Architected a four-phase LLM fine-tuning pipeline using GRPO, QLoRA, and adaptive curriculum learning for resource-constrained environments."
+      ml-research: "Developed a novel four-phase fine-tuning framework integrating GRPO-based RL, QLoRA, and self-supervised contrastive learning."
+  - text: "Replaced neural reward models with deterministic execution verifiers (a math interpreter and a logic classifier) to eliminate reward noise."
+    tags: [ai, research]
+    variants:
+      ai-engineer: "Engineered deterministic execution verifiers (math interpreter, logic classifier) to replace neural reward models, completely eliminating reward noise."
+  - text: "On Phi-3-Mini (3.8B), delivered consistent accuracy gains over baseline — GSM8K 48%→62%, StrategyQA 42%→71%, MMLU 37%→63% — re-validated across multiple runs (±1%)."
+    tags: [ai, research]
+    variants:
+      ai-engineer: "Achieved significant accuracy gains on Phi-3-Mini (3.8B): GSM8K (+14%), StrategyQA (+29%), and MMLU (+26%), with robust re-validation."
+  - text: "Quantized the final model to a 4-bit GGUF (~2.2 GB) artifact for CPU-only inference."
+    tags: [ai, python]
+    variants:
+      backend-engineer: "Optimized model deployment by quantizing the final artifact to a 4-bit GGUF (~2.2 GB), enabling efficient CPU-only inference."
+scene:
+  artifact: "crystal-01"
+  accent: "#FFB86B"
+media: []
+updatedAt: "2026-10-03"
+---
+
+## Problem
+
+Fine-tuning Large Language Models traditionally requires immense computational resources and suffers from reward noise when relying solely on neural reward models. There was a need for a resource-efficient, reliable pipeline for smaller models that guarantees deterministic execution evaluation.
+
+## Constraints
+
+- Computational limitations required using parameter-efficient fine-tuning (QLoRA).
+- Need to eliminate reward noise inherent in LLM-as-a-judge approaches.
+- Final model must be small enough to run on CPU-only edge devices.
+
+## Key decisions
+
+- Chose GRPO (Group Relative Policy Optimization) over PPO for better stability in resource-constrained environments.
+- Replaced neural reward models entirely with deterministic verifiers (a math interpreter and logic classifier) to ensure absolute ground-truth reward signals.
+- Elected to quantize the final output to 4-bit GGUF, prioritizing accessibility and edge deployment over marginal precision retention.
+
+## Architecture
+
+[Placeholder for Phase 5 — the 3D diagram lives here]
+
+A brief written description of how the system fits together:
+- **Phase 1 & 2:** Initial setup and QLoRA adapter initialization.
+- **Phase 3:** GRPO-based reinforcement learning with deterministic execution verifiers scoring trajectories.
+- **Phase 4:** Quantization pipeline exporting the model to a 4-bit GGUF format ready for CPU inference.

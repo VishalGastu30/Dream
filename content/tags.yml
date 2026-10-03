@@ -37,6 +37,9 @@ domain:
   - data
   - security
   - cloud
+  - computer-science
+  - software-engineering
+  - transformers
 
 framework:
   - react

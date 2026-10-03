@@ -1,0 +1,17 @@
+schemaVersion: 1
+id: liver-fibrosis-staging
+title: "Automated Liver Fibrosis Staging Using a Transformer-based Weighted Soft Voting Ensemble"
+publisher: "2026 International Conference on Natural Language Processing and Computer Vision (ICNPCV)"
+period:
+  start: "2026-07"
+  end: "2026-07"
+status: published
+tags: [ai, ml, cv, transformers]
+visibility:
+  website: true
+  resume: true
+  timeline: true
+  featured: true
+resumeWeight: 4
+description: "Research work on a transformer-based medical AI approach using a weighted soft-voting ensemble for automated liver fibrosis staging. Presented at Global Academy of Technology, Bengaluru."
+updatedAt: "2026-10-03"

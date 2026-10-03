@@ -1,0 +1,66 @@
+---
+schemaVersion: 1
+id: viren
+title: "Viren"
+tagline: "Privacy-First Investment Intelligence app with on-device LLM semantic repair."
+status: published
+period:
+  start: "2025-01"
+  end: "2025-05"
+tags: [mobile, flutter, python, ai, security]
+stack: [Flutter, Dart, Python, SQLite, Drift ORM, On-device LLM]
+repo: "vishalgastu30/viren"
+links: []
+visibility:
+  website: true
+  resume: true
+  timeline: true
+  featured: true
+resumeWeight: 4
+bullets:
+  - text: "Built an offline-capable app that reconstructs investment portfolios from broker emails and encrypted financial documents."
+    tags: [mobile, flutter, python]
+    variants:
+      mobile-developer: "Developed an offline-first Flutter application to securely reconstruct investment portfolios from raw broker emails."
+      fullstack-developer: "Built an offline-capable Flutter app backed by a local Python data-extraction pipeline for portfolio reconstruction."
+  - text: "Developed an end-to-end pipeline for email authentication, PDF decryption, trade extraction, and portfolio reconciliation."
+    tags: [backend, python, security]
+    variants:
+      backend-engineer: "Engineered a secure data pipeline managing email OAuth, robust PDF decryption, and automated trade reconciliation."
+  - text: "Integrated an on-device LLM for semantic repair of noisy financial document text, keeping sensitive data local."
+    tags: [ai, mobile, security]
+    variants:
+      ai-engineer: "Integrated an on-device LLM to semantically repair noisy OCR/document text, ensuring zero PII leakage to the cloud."
+      ml-research: "Applied on-device LLM inference for privacy-preserving semantic text repair on noisy financial documents."
+scene:
+  artifact: "crystal-03"
+  accent: "#50E3C2"
+media: []
+updatedAt: "2026-10-03"
+---
+
+## Problem
+
+Investors often receive their trade details via fragmented broker emails and encrypted PDFs. Manually tracking these investments is tedious, and cloud-based automated tools pose severe privacy risks by ingesting sensitive financial data.
+
+## Constraints
+
+- Strict privacy requirement: no financial data can leave the user's device.
+- Financial documents are notoriously noisy and irregularly formatted.
+- The app must remain responsive while running heavy on-device processing.
+
+## Key decisions
+
+- Chose Flutter for cross-platform UI combined with an embedded SQLite/Drift ORM for robust local data persistence.
+- Opted for an entirely on-device LLM pipeline to handle semantic text repair, actively choosing privacy over the raw speed of a cloud API.
+- Implemented Gmail OAuth strictly on the client side to retrieve and decrypt PDFs locally.
+
+## Architecture
+
+[Placeholder for Phase 5 — the 3D diagram lives here]
+
+A brief written description of how the system fits together:
+- **Data Ingestion:** Client-side OAuth retrieves encrypted broker PDFs.
+- **Processing Engine:** Local Python/Dart pipeline decrypts and extracts raw text.
+- **AI Repair:** On-device LLM semantically repairs OCR noise.
+- **Storage:** Cleaned trade data is reconciled and stored in the local SQLite database via Drift ORM.
