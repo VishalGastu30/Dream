@@ -1,0 +1,11 @@
+# github-exclude.yml
+#
+# Repos to exclude from the GitHub Galaxy scene (Phase 5).
+# Useful for: forks you didn't contribute to meaningfully,
+# archived projects, private mirrors, or anything you don't want featured.
+#
+# Format: list of repo names (without the username/ prefix).
+
+# Example:
+# - forked-thing-i-never-touched
+# - homework-repo-2019
