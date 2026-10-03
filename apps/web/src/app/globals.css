@@ -1,0 +1,94 @@
+/* =============================================================
+   globals.css — Phase 0 placeholder
+   Full token system will be imported from packages/ui-tokens in Phase 3.
+   ============================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Backgrounds */
+  --bg-0: #05060a;
+  --bg-1: #0b0d14;
+
+  /* Surfaces */
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-strong: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+
+  /* Text */
+  --text-0: #f2f4f8;
+  --text-1: #b4bbcb;
+  --text-2: #8b93a7;
+
+  /* Accent — ghost light (near-white signal, per brand-brief.md) */
+  --signal: #f2f4f8; /* ghost light — near-white; was #6ee7f9 cyan */
+  --ember: #ffb86b;
+  --danger: #ff6b6b;
+
+  /* Radii */
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 24px;
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.64, 0, 0.78, 0);
+}
+
+html,
+body {
+  min-height: 100vh;
+  background-color: var(--bg-0);
+  color: var(--text-0);
+  /* Placeholder until real fonts are self-hosted in Phase 3 */
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus visible — always show for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+/* Remove default focus ring for mouse users only */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Skip link — visible on keyboard focus, off-screen otherwise */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background: var(--signal);
+  color: var(--bg-0);
+  font-weight: 700;
+  font-size: 0.875rem;
+  z-index: 9999;
+  border-radius: 0 0 var(--radius-s) 0;
+  text-decoration: none;
+  transition: top 150ms var(--ease-out);
+}
