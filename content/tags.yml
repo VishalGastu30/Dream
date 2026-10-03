@@ -6,31 +6,73 @@
 #
 # Format: category → list of tags
 # Tags must be: lowercase, kebab-case, no spaces, no uppercase.
-#
-# This file will be populated in Phase 1 when content entities are added.
 
-# Example structure (uncomment and populate in Phase 1):
-# language:
-#   - python
-#   - typescript
-#   - javascript
-#   - go
-#
-# domain:
-#   - ai
-#   - ml
-#   - backend
-#   - fullstack
-#   - mobile
-#   - devops
-#
-# tool:
-#   - react
-#   - nextjs
-#   - pytorch
-#
-# role-preset:
-#   - ai-engineer
-#   - ml-research
-#   - backend-engineer
-#   - fullstack-developer
+language:
+  - python
+  - typescript
+  - javascript
+  - java
+  - go
+  - c
+  - cpp
+  - dart
+  - swift
+  - kotlin
+  - rust
+  - bash
+  - sql
+
+domain:
+  - ai
+  - ml
+  - rl
+  - nlp
+  - cv
+  - backend
+  - frontend
+  - fullstack
+  - mobile
+  - devops
+  - research
+  - data
+  - security
+  - cloud
+
+framework:
+  - react
+  - nextjs
+  - fastapi
+  - django
+  - express
+  - flutter
+  - pytorch
+  - tensorflow
+  - keras
+  - sklearn
+  - huggingface
+  - langchain
+  - tailwindcss
+
+tool:
+  - docker
+  - git
+  - postgres
+  - sqlite
+  - redis
+  - firebase
+  - supabase
+  - aws
+  - gcp
+  - cloudflare
+  - arduino
+  - raspberrypi
+  - linux
+  - figma
+
+role-preset:
+  - ai-engineer
+  - ml-research
+  - backend-engineer
+  - fullstack-developer
+  - mobile-developer
+  - general
