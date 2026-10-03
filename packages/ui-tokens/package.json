@@ -1,0 +1,13 @@
+{
+  "name": "@dream/ui-tokens",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check ."
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./css": "./src/tokens.css"
+  }
+}
