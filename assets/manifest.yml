@@ -1,0 +1,23 @@
+# assets/manifest.yml — Asset registry
+#
+# EVERY file in assets/ MUST have an entry here.
+# validate:content + check:assets enforce this.
+#
+# Required fields for every entry:
+#   id:            unique kebab-case identifier (permanent — never rename)
+#   type:          image | model | font | audio | texture | video
+#   file:          relative path from repo root
+#   source_url:    original page URL where asset was obtained
+#   author:        author name
+#   license:       SPDX identifier (e.g. CC0-1.0, CC-BY-4.0, SIL-OFL-1.1)
+#   attribution:   display string for ATTRIBUTIONS.md
+#   retrieved:     YYYY-MM-DD
+#   modified:      list of modifications applied (e.g. [compressed, resized, decimated])
+#   used_in:       list of places this asset is used
+#
+# Licences that are FORBIDDEN: CC-NC (non-commercial), CC-ND (no derivatives).
+# Preferred: CC0 > CC-BY > SIL-OFL (fonts) > MIT (software).
+#
+# Phase 0: No assets yet. Add entries when assets are sourced.
+
+assets: []
