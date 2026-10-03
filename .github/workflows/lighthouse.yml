@@ -1,0 +1,49 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [main]
+  # Run on a schedule after Phase 3 (monthly):
+  # schedule:
+  #   - cron: "0 3 1 * *"
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    name: Lighthouse audit
+    runs-on: ubuntu-latest
+    # Phase 0: lighthouse will fail because the site has no real content yet.
+    # Enable fully in Phase 3 after the coming-soon page has substance.
+    # For now, it runs but failures don't block main.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build site
+        run: pnpm build
+        env:
+          SITE_URL: https://your-project.pages.dev
+
+      - name: Run Lighthouse CI
+        run: pnpm exec lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      - name: Upload Lighthouse report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-report
+          path: .lighthouseci/
+          retention-days: 30
