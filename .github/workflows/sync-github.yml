@@ -1,0 +1,39 @@
+name: Sync GitHub repos
+
+on:
+  schedule:
+    # Every Sunday at 02:00 UTC
+    - cron: "0 2 * * 0"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Sync GitHub public repos → content/generated/github.json
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Phase 0: stub — sync script will be implemented in Phase 6
+      - name: Sync GitHub repos
+        run: pnpm tsx scripts/sync-github.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Phase 6: if sync-github.ts writes changes, commit + push them
+      # Uncomment when the script is implemented:
+      # - name: Commit generated data
+      #   uses: stefanzweifel/git-auto-commit-action@v5
+      #   with:
+      #     commit_message: "chore: sync github repos data"
+      #     file_pattern: content/generated/github.json
