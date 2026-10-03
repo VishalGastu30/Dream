@@ -1,0 +1,30 @@
+{
+  "name": "dream",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "check": "pnpm typecheck && pnpm lint && pnpm test && pnpm validate:content && pnpm build && pnpm check:budget && pnpm check:assets",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "validate:content": "tsx scripts/validate-content.ts",
+    "build:career": "tsx scripts/build-career.ts",
+    "build:resumes": "tsx scripts/build-resumes.ts",
+    "check:budget": "tsx scripts/check-budget.ts",
+    "check:assets": "tsx scripts/check-assets.ts",
+    "test:e2e": "pnpm --filter web test:e2e",
+    "format": "biome format --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.0",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
