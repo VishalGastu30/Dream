@@ -1,0 +1,36 @@
+# tags.yml — Controlled tag vocabulary
+#
+# ALL tags used in content/ entities MUST appear in this file.
+# validate:content will fail for unknown tags.
+# Add the tag here FIRST, then use it in content files.
+#
+# Format: category → list of tags
+# Tags must be: lowercase, kebab-case, no spaces, no uppercase.
+#
+# This file will be populated in Phase 1 when content entities are added.
+
+# Example structure (uncomment and populate in Phase 1):
+# language:
+#   - python
+#   - typescript
+#   - javascript
+#   - go
+#
+# domain:
+#   - ai
+#   - ml
+#   - backend
+#   - fullstack
+#   - mobile
+#   - devops
+#
+# tool:
+#   - react
+#   - nextjs
+#   - pytorch
+#
+# role-preset:
+#   - ai-engineer
+#   - ml-research
+#   - backend-engineer
+#   - fullstack-developer
