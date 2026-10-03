@@ -1,0 +1,42 @@
+/*
+  Design tokens — canonical CSS custom properties.
+  This is the source of truth for the entire design system.
+  Both DOM components and 3D shaders read from this palette
+  (shaders via the TypeScript bridge in index.ts).
+
+  See MASTER_PLAN.md §8.2 for the full specification.
+  See .agents/rules/30-design-system.md for usage rules.
+
+  LIGHT THEME: Not an inversion of this file.
+  The professional/light theme uses a SEPARATE token set (Phase 3).
+*/
+
+:root {
+  /* ── Backgrounds ─────────────────────────────── */
+  --bg-0: #05060a;           /* deepest background */
+  --bg-1: #0b0d14;           /* elevated background */
+
+  /* ── Surfaces (glass) ────────────────────────── */
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-strong: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+
+  /* ── Text ────────────────────────────────────── */
+  --text-0: #f2f4f8;         /* primary text */
+  --text-1: #b4bbcb;         /* secondary text */
+  --text-2: #8b93a7;         /* tertiary / muted text */
+
+  /* ── Accent ──────────────────────────────────── */
+  --signal: #f2f4f8;         /* ghost light — near-white signal. Only interaction accent. Use sparingly. */
+  --ember: #ffb86b;          /* rare: warnings, highlights */
+  --danger: #ff6b6b;
+
+  /* ── Radii ───────────────────────────────────── */
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 24px;
+
+  /* ── Easing ──────────────────────────────────── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* entrances */
+  --ease-in: cubic-bezier(0.64, 0, 0.78, 0);  /* exits */
+}
