@@ -1,0 +1,24 @@
+# Cloudflare Workers configuration — apps/api
+# See ADR-002 for the hosting decision.
+# IMPORTANT: Secrets are set via `wrangler secret put`, NOT in this file.
+# See .agents/rules/60-security-privacy.md for the full secrets spec.
+#
+# NOTE: Verify current Cloudflare recommendation (Pages vs Workers static assets)
+# at project start — see docs/verified-facts.md ⚠️
+
+name = "dream-api"
+main = "src/index.ts"
+# Update compatibility_date to current date at implementation time
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dream-db"
+# Fill in after: wrangler d1 create dream-db
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[vars]
+# Non-secret variables — safe to commit
+# Secrets (GROQ_API_KEY, GITHUB_OAUTH_*, AUTH_SECRET, OWNER_GITHUB_ID, TURNSTILE_SECRET)
+# are set via: wrangler secret put <SECRET_NAME>
+ENVIRONMENT = "production"
