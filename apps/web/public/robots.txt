@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Studio and invite pages are owner-only / single-use — exclude from indexing
+Disallow: /studio/
+Disallow: /t/
+
+# Sitemap URL — update when SITE_URL is set to a custom domain
+Sitemap: https://your-project.pages.dev/sitemap.xml
