@@ -1,79 +1,64 @@
-import type { Metadata } from "next";
+import careerData from '@/data/career.json';
 
-export const metadata: Metadata = {
-  title: "Vishal Gastu // Digital Universe",
-  description:
-    "Creating what doesn't exist yet, and building it well enough to change what comes next.",
-};
+export default function Home() {
+  const { profile, projects, experience } = careerData;
 
-export default function HomePage() {
   return (
-    <main
-      id="main-content"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        minHeight: "100vh",
-        gap: "1.5rem",
-        padding: "2rem",
-        textAlign: "center",
-      }}
-    >
-      {/* Signal dot — ghost light, luminous near-white glow */}
-      <div
-        aria-hidden="true"
-        style={{
-          width: "10px",
-          height: "10px",
-          borderRadius: "50%",
-          background: "var(--signal)",
-          boxShadow: "0 0 18px 6px rgba(242, 244, 248, 0.35)",
-          animation: "pulse 3s ease-in-out infinite",
-        }}
-      />
+    <div className="min-h-screen p-8 max-w-4xl mx-auto space-y-16">
+      <header className="space-y-4">
+        <h1 className="text-5xl font-heading font-bold text-accent">
+          {profile.displayName}
+        </h1>
+        <p className="text-xl text-muted font-mono">{profile.title}</p>
+        <p className="text-lg max-w-2xl leading-relaxed">
+          {profile.summary}
+        </p>
+      </header>
 
-      {/* Name — VISHAL GASTU in all-caps, dominant hero presence */}
-      <h1
-        style={{
-          color: "var(--signal)",
-          fontSize: "clamp(1.75rem, 6vw, 3.5rem)",
-          fontWeight: 700,
-          letterSpacing: "0.12em",
-          textTransform: "uppercase",
-        }}
-      >
-        Vishal Gastu
-      </h1>
+      <section className="space-y-8">
+        <h2 className="text-3xl font-heading font-semibold border-b border-border pb-2">
+          Experience
+        </h2>
+        <div className="space-y-8">
+          {experience.map((exp: any) => (
+            <div key={exp.id} className="space-y-2">
+              <div className="flex justify-between items-baseline">
+                <h3 className="text-xl font-bold">{exp.role}</h3>
+                <span className="text-sm text-muted font-mono">
+                  {exp.period.start} - {exp.period.end || 'Present'}
+                </span>
+              </div>
+              <p className="text-accent-dim">{exp.company}</p>
+              <ul className="list-disc list-inside space-y-1 text-muted">
+                {exp.highlights?.slice(0, 3).map((item: string, i: number) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* Tagline */}
-      <p
-        style={{
-          color: "var(--text-1)",
-          maxWidth: "46ch",
-          fontSize: "1.0625rem",
-          lineHeight: 1.65,
-          letterSpacing: "0.01em",
-        }}
-      >
-        Creating what doesn&apos;t exist yet, and building it well enough to
-        change what comes next.
-      </p>
-
-      <p style={{ color: "var(--text-2)", fontSize: "0.8125rem", letterSpacing: "0.08em" }}>
-        DIGITAL UNIVERSE — IN CONSTRUCTION
-      </p>
-
-      <style>{`
-        @keyframes pulse {
-          0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 18px 6px rgba(242, 244, 248, 0.35); }
-          50% { opacity: 0.55; transform: scale(0.82); box-shadow: 0 0 8px 2px rgba(242, 244, 248, 0.15); }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          @keyframes pulse { 0%, 100% { opacity: 1; } }
-        }
-      `}</style>
-    </main>
+      <section className="space-y-8">
+        <h2 className="text-3xl font-heading font-semibold border-b border-border pb-2">
+          Featured Projects
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project: any) => (
+            <div key={project.id} className="border border-border p-6 rounded-lg space-y-4 bg-accent-dim/10">
+              <h3 className="text-2xl font-bold text-accent">{project.title}</h3>
+              <p className="text-muted">{project.tagline}</p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {project.tags?.slice(0, 4).map((tag: string) => (
+                  <span key={tag} className="text-xs px-2 py-1 bg-border rounded-full font-mono">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

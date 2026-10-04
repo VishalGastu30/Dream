@@ -1,0 +1,913 @@
+{
+  "profile": {
+    "schemaVersion": 1,
+    "id": "vishal-gastu",
+    "name": "Vishal Gastu",
+    "displayName": "VISHAL GASTU",
+    "title": "AI Engineer & Software Developer",
+    "email": "vishalgastu30@gmail.com",
+    "location": "Chennai, Tamil Nadu",
+    "openToOpportunities": true,
+    "github": "vishalgastu30",
+    "linkedin": "vishal-gastu",
+    "website": "https://vishalgastu.pages.dev",
+    "tagline": "Creating what doesn't exist yet, and building it well enough to change what comes next.",
+    "summaries": {
+      "general": "Computer Science undergraduate with hands-on experience in AI/ML, LLM engineering, and production-oriented software development. Experienced in fine-tuning LLMs alongside building robust REST APIs and backend services in Go and Python.\n",
+      "ai-engineer": "AI Engineer experienced in fine-tuning and evaluating LLM systems with PyTorch, GRPO, and QLoRA. Currently researching runtime safety monitoring for AI agents, focused on taking systems from experimentation to deployable applications.\n",
+      "backend-engineer": "Backend Engineer experienced in building maintainable REST APIs, PostgreSQL data access, and full-stack systems. Proven ability to optimize SQL, implement layered architecture, and debug production workflows at scale.\n",
+      "fullstack-developer": "Full-Stack Developer experienced in integrating React/Next.js frontends with robust Go and Python backends. Capable of building scalable web platforms, offline-first mobile applications, and secure data pipelines.\n"
+    },
+    "bio": {
+      "short": "Vishal Gastu is a Computer Science undergraduate at SRMIST, specializing in AI/ML engineering, LLM fine-tuning, and scalable full-stack development.",
+      "long": "Vishal Gastu is an AI Engineer and Software Developer currently pursuing a B.Tech in Computer Science at SRM Institute of Science and Technology. He has hands-on experience fine-tuning small language models, building runtime safety monitors for AI agents, and developing enterprise-grade backend systems in Go. Vishal is passionate about taking complex AI architectures from raw experimentation to reliable, deployable products."
+    },
+    "updatedAt": "2026-10-03"
+  },
+  "tags": {
+    "language": [
+      "python",
+      "typescript",
+      "javascript",
+      "java",
+      "go",
+      "c",
+      "cpp",
+      "dart",
+      "swift",
+      "kotlin",
+      "rust",
+      "bash",
+      "sql"
+    ],
+    "domain": [
+      "ai",
+      "ml",
+      "rl",
+      "nlp",
+      "cv",
+      "backend",
+      "frontend",
+      "fullstack",
+      "mobile",
+      "devops",
+      "research",
+      "data",
+      "security",
+      "cloud",
+      "computer-science",
+      "software-engineering",
+      "transformers"
+    ],
+    "framework": [
+      "react",
+      "nextjs",
+      "fastapi",
+      "django",
+      "express",
+      "flutter",
+      "pytorch",
+      "tensorflow",
+      "keras",
+      "sklearn",
+      "huggingface",
+      "langchain",
+      "tailwindcss"
+    ],
+    "tool": [
+      "docker",
+      "git",
+      "postgres",
+      "sqlite",
+      "redis",
+      "firebase",
+      "supabase",
+      "aws",
+      "gcp",
+      "cloudflare",
+      "arduino",
+      "raspberrypi",
+      "linux",
+      "figma"
+    ],
+    "role-preset": [
+      "ai-engineer",
+      "ml-research",
+      "backend-engineer",
+      "fullstack-developer",
+      "mobile-developer",
+      "general"
+    ]
+  },
+  "projects": [
+    {
+      "schemaVersion": 1,
+      "id": "craft",
+      "title": "CRAFT",
+      "tagline": "Adaptive Fine-Tuning for Small Language Models using GRPO, QLoRA, and self-supervised learning.",
+      "status": "published",
+      "period": {
+        "start": "2026-01",
+        "end": "2026-05"
+      },
+      "tags": [
+        "ai",
+        "python",
+        "pytorch",
+        "huggingface",
+        "research"
+      ],
+      "stack": [
+        "Python",
+        "PyTorch",
+        "HuggingFace",
+        "TRL",
+        "GRPO",
+        "QLoRA",
+        "GGUF"
+      ],
+      "repo": "vishalgastu30/craft",
+      "links": [],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": true
+      },
+      "resumeWeight": 5,
+      "bullets": [
+        {
+          "text": "Built a four-phase fine-tuning framework combining GRPO-based reinforcement learning, QLoRA, step-level self-supervised contrastive learning, and adaptive curriculum learning.",
+          "tags": [
+            "ai",
+            "research",
+            "python",
+            "pytorch"
+          ],
+          "variants": {
+            "ai-engineer": "Architected a four-phase LLM fine-tuning pipeline using GRPO, QLoRA, and adaptive curriculum learning for resource-constrained environments.",
+            "ml-research": "Developed a novel four-phase fine-tuning framework integrating GRPO-based RL, QLoRA, and self-supervised contrastive learning."
+          }
+        },
+        {
+          "text": "Replaced neural reward models with deterministic execution verifiers (a math interpreter and a logic classifier) to eliminate reward noise.",
+          "tags": [
+            "ai",
+            "research"
+          ],
+          "variants": {
+            "ai-engineer": "Engineered deterministic execution verifiers (math interpreter, logic classifier) to replace neural reward models, completely eliminating reward noise."
+          }
+        },
+        {
+          "text": "On Phi-3-Mini (3.8B), delivered consistent accuracy gains over baseline — GSM8K 48%→62%, StrategyQA 42%→71%, MMLU 37%→63% — re-validated across multiple runs (±1%).",
+          "tags": [
+            "ai",
+            "research"
+          ],
+          "variants": {
+            "ai-engineer": "Achieved significant accuracy gains on Phi-3-Mini (3.8B): GSM8K (+14%), StrategyQA (+29%), and MMLU (+26%), with robust re-validation."
+          }
+        },
+        {
+          "text": "Quantized the final model to a 4-bit GGUF (~2.2 GB) artifact for CPU-only inference.",
+          "tags": [
+            "ai",
+            "python"
+          ],
+          "variants": {
+            "backend-engineer": "Optimized model deployment by quantizing the final artifact to a 4-bit GGUF (~2.2 GB), enabling efficient CPU-only inference."
+          }
+        }
+      ],
+      "scene": {
+        "artifact": "crystal-01",
+        "accent": "#FFB86B"
+      },
+      "media": [],
+      "updatedAt": "2026-10-03",
+      "body": "## Problem\n\nFine-tuning Large Language Models traditionally requires immense computational resources and suffers from reward noise when relying solely on neural reward models. There was a need for a resource-efficient, reliable pipeline for smaller models that guarantees deterministic execution evaluation.\n\n## Constraints\n\n- Computational limitations required using parameter-efficient fine-tuning (QLoRA).\n- Need to eliminate reward noise inherent in LLM-as-a-judge approaches.\n- Final model must be small enough to run on CPU-only edge devices.\n\n## Key decisions\n\n- Chose GRPO (Group Relative Policy Optimization) over PPO for better stability in resource-constrained environments.\n- Replaced neural reward models entirely with deterministic verifiers (a math interpreter and logic classifier) to ensure absolute ground-truth reward signals.\n- Elected to quantize the final output to 4-bit GGUF, prioritizing accessibility and edge deployment over marginal precision retention.\n\n## Architecture\n\n[Placeholder for Phase 5 — the 3D diagram lives here]\n\nA brief written description of how the system fits together:\n- **Phase 1 & 2:** Initial setup and QLoRA adapter initialization.\n- **Phase 3:** GRPO-based reinforcement learning with deterministic execution verifiers scoring trajectories.\n- **Phase 4:** Quantization pipeline exporting the model to a 4-bit GGUF format ready for CPU inference."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "synergy",
+      "title": "Synergy",
+      "tagline": "Campus Intelligence & Placement OS connecting Students, Faculty, and Recruiters.",
+      "status": "published",
+      "period": {
+        "start": "2025-06",
+        "end": "2025-11"
+      },
+      "tags": [
+        "fullstack",
+        "nextjs",
+        "react",
+        "typescript",
+        "backend"
+      ],
+      "stack": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Node.js",
+        "REST API"
+      ],
+      "repo": "vishalgastu30/synergy",
+      "links": [],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": true
+      },
+      "resumeWeight": 4,
+      "bullets": [
+        {
+          "text": "Built a full-stack, role-based campus platform connecting Students, Faculty, Management, and Recruiters through verified skill tracking and placement analytics.",
+          "tags": [
+            "fullstack",
+            "nextjs",
+            "typescript"
+          ],
+          "variants": {
+            "fullstack-developer": "Developed a comprehensive role-based campus OS using Next.js and Node.js, integrating skill tracking and real-time analytics.",
+            "backend-engineer": "Architected the backend for a campus placement OS, ensuring secure role-based access for students, faculty, and recruiters."
+          }
+        },
+        {
+          "text": "Designed faculty-verification workflows, cohort analytics dashboards, and recruiter talent-discovery pipelines with real-time readiness scoring.",
+          "tags": [
+            "fullstack",
+            "backend"
+          ],
+          "variants": {
+            "fullstack-developer": "Designed and implemented faculty-verification workflows and real-time analytics dashboards for talent discovery."
+          }
+        },
+        {
+          "text": "Implemented five role-specific portals with a shared design system, mock-data interceptors, and a staged REST API integration layer.",
+          "tags": [
+            "frontend",
+            "react",
+            "typescript"
+          ],
+          "variants": {
+            "fullstack-developer": "Built five role-specific portals using a unified design system and robust REST API integration layer."
+          }
+        }
+      ],
+      "scene": {
+        "artifact": "crystal-02",
+        "accent": "#4A90E2"
+      },
+      "media": [],
+      "updatedAt": "2026-10-03",
+      "body": "## Problem\n\nCampus placement processes involve massive amounts of fragmented data spread across students, faculty, and recruiters. Tracking verified skills and managing placement pipelines manually was inefficient and prone to data loss.\n\n## Constraints\n\n- Required handling five distinct user roles with highly asymmetric data access permissions.\n- Needed to provide real-time analytics on cohort readiness without bogging down the database.\n- Must ensure a unified user experience despite the fragmented underlying data.\n\n## Key decisions\n\n- Built with Next.js and TypeScript to share types across the frontend and the mock/staged API layer, preventing runtime type mismatches.\n- Implemented a unified design system using Tailwind CSS to guarantee visual consistency across all five role-specific portals.\n- Used mock-data interceptors early in development to parallelize frontend and backend work streams efficiently.\n\n## Architecture\n\n[Placeholder for Phase 5 — the 3D diagram lives here]\n\nA brief written description of how the system fits together:\n- **Client layer:** Next.js application serving five distinct role-based portals.\n- **API layer:** Node.js REST API handling authentication, role verification, and analytics.\n- **Data flow:** Student skill updates trigger faculty verification workflows, feeding into the recruiter talent-discovery pipeline."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "viren",
+      "title": "Viren",
+      "tagline": "Privacy-First Investment Intelligence app with on-device LLM semantic repair.",
+      "status": "published",
+      "period": {
+        "start": "2025-01",
+        "end": "2025-05"
+      },
+      "tags": [
+        "mobile",
+        "flutter",
+        "python",
+        "ai",
+        "security"
+      ],
+      "stack": [
+        "Flutter",
+        "Dart",
+        "Python",
+        "SQLite",
+        "Drift ORM",
+        "On-device LLM"
+      ],
+      "repo": "vishalgastu30/viren",
+      "links": [],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": true
+      },
+      "resumeWeight": 4,
+      "bullets": [
+        {
+          "text": "Built an offline-capable app that reconstructs investment portfolios from broker emails and encrypted financial documents.",
+          "tags": [
+            "mobile",
+            "flutter",
+            "python"
+          ],
+          "variants": {
+            "mobile-developer": "Developed an offline-first Flutter application to securely reconstruct investment portfolios from raw broker emails.",
+            "fullstack-developer": "Built an offline-capable Flutter app backed by a local Python data-extraction pipeline for portfolio reconstruction."
+          }
+        },
+        {
+          "text": "Developed an end-to-end pipeline for email authentication, PDF decryption, trade extraction, and portfolio reconciliation.",
+          "tags": [
+            "backend",
+            "python",
+            "security"
+          ],
+          "variants": {
+            "backend-engineer": "Engineered a secure data pipeline managing email OAuth, robust PDF decryption, and automated trade reconciliation."
+          }
+        },
+        {
+          "text": "Integrated an on-device LLM for semantic repair of noisy financial document text, keeping sensitive data local.",
+          "tags": [
+            "ai",
+            "mobile",
+            "security"
+          ],
+          "variants": {
+            "ai-engineer": "Integrated an on-device LLM to semantically repair noisy OCR/document text, ensuring zero PII leakage to the cloud.",
+            "ml-research": "Applied on-device LLM inference for privacy-preserving semantic text repair on noisy financial documents."
+          }
+        }
+      ],
+      "scene": {
+        "artifact": "crystal-03",
+        "accent": "#50E3C2"
+      },
+      "media": [],
+      "updatedAt": "2026-10-03",
+      "body": "## Problem\n\nInvestors often receive their trade details via fragmented broker emails and encrypted PDFs. Manually tracking these investments is tedious, and cloud-based automated tools pose severe privacy risks by ingesting sensitive financial data.\n\n## Constraints\n\n- Strict privacy requirement: no financial data can leave the user's device.\n- Financial documents are notoriously noisy and irregularly formatted.\n- The app must remain responsive while running heavy on-device processing.\n\n## Key decisions\n\n- Chose Flutter for cross-platform UI combined with an embedded SQLite/Drift ORM for robust local data persistence.\n- Opted for an entirely on-device LLM pipeline to handle semantic text repair, actively choosing privacy over the raw speed of a cloud API.\n- Implemented Gmail OAuth strictly on the client side to retrieve and decrypt PDFs locally.\n\n## Architecture\n\n[Placeholder for Phase 5 — the 3D diagram lives here]\n\nA brief written description of how the system fits together:\n- **Data Ingestion:** Client-side OAuth retrieves encrypted broker PDFs.\n- **Processing Engine:** Local Python/Dart pipeline decrypts and extracts raw text.\n- **AI Repair:** On-device LLM semantically repairs OCR noise.\n- **Storage:** Cleaned trade data is reconciled and stored in the local SQLite database via Drift ORM."
+    }
+  ],
+  "experience": [
+    {
+      "schemaVersion": 1,
+      "id": "qube-cinema-intern",
+      "title": "Full Stack Engineer Intern",
+      "organization": "Qube Cinema Technologies",
+      "location": "Chennai, Tamil Nadu · Remote",
+      "type": "internship",
+      "period": {
+        "start": "2026-07",
+        "end": "2026-08"
+      },
+      "status": "published",
+      "tags": [
+        "go",
+        "postgres",
+        "backend",
+        "fullstack",
+        "sql"
+      ],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": false
+      },
+      "resumeWeight": 4,
+      "bullets": [
+        {
+          "text": "Built JWT-authenticated REST APIs in Go with PostgreSQL-backed reporting workflows for enterprise-grade cinema distribution software.",
+          "tags": [
+            "go",
+            "postgres",
+            "backend"
+          ],
+          "variants": {
+            "backend-engineer": "Built JWT-authenticated REST APIs in Go with PostgreSQL; designed enterprise reporting workflows.",
+            "fullstack-developer": "Developed end-to-end reporting modules with a Go/PostgreSQL backend and a React/Next.js frontend."
+          }
+        },
+        {
+          "text": "Applied SQL optimization, indexing, complex joins, and parameterized queries to keep reporting fast and reliable at scale.",
+          "tags": [
+            "sql",
+            "postgres",
+            "backend"
+          ],
+          "variants": {
+            "backend-engineer": "Optimized data access at scale using advanced SQL indexing, complex joins, and parameterized queries."
+          }
+        },
+        {
+          "text": "Delivered Release and Mapped CPL reporting modules within a layered Handler–Service–Repository architecture, pairing the Go backend with a React/Next.js frontend.",
+          "tags": [
+            "go",
+            "react",
+            "nextjs",
+            "fullstack"
+          ],
+          "variants": {}
+        }
+      ],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "urop-srmist",
+      "title": "Undergraduate Research - AI Agent Safety",
+      "organization": "SRM Institute of Science and Technology",
+      "location": "Kattankulathur, Tamil Nadu",
+      "type": "part-time",
+      "period": {
+        "start": "2026-01",
+        "end": null
+      },
+      "status": "published",
+      "tags": [
+        "python",
+        "ai",
+        "research",
+        "security"
+      ],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": false
+      },
+      "resumeWeight": 4,
+      "bullets": [
+        {
+          "text": "Designing a runtime monitoring and enforcement framework that grades AI-agent reasoning and actions against SOPs and blocks unsafe actions.",
+          "tags": [
+            "ai",
+            "security",
+            "research"
+          ],
+          "variants": {
+            "ai-engineer": "Designing verifiable runtime enforcement frameworks for AI agents to guarantee SOP compliance and block unsafe actions.",
+            "ml-research": "Researching verifiable observability for AI agents; designing runtime compliance monitors blocking unsafe trajectory actions."
+          }
+        },
+        {
+          "text": "Architected a four-stage pipeline: Strategy Profiler, Rule Bank, Constraint Compliance Monitor, and Metrics Engine, backed by a trajectory store.",
+          "tags": [
+            "ai",
+            "backend",
+            "python"
+          ],
+          "variants": {
+            "backend-engineer": "Architected a four-stage runtime validation pipeline backed by an auditable trajectory store."
+          }
+        },
+        {
+          "text": "Built a literature survey spanning 20+ papers on LLM-agent safety, runtime enforcement, and constraint drift to position the work for publication.",
+          "tags": [
+            "research",
+            "ai"
+          ],
+          "variants": {}
+        }
+      ],
+      "updatedAt": "2026-10-03"
+    }
+  ],
+  "education": [
+    {
+      "schemaVersion": 1,
+      "id": "chettinad-vidyashram",
+      "degree": "Class XII (CBSE)",
+      "institution": "Chettinad Vidyashram",
+      "location": "Chennai, Tamil Nadu",
+      "period": {
+        "start": "2022-06",
+        "end": "2024-05"
+      },
+      "gpa": "80.2%",
+      "status": "published",
+      "tags": [],
+      "visibility": {
+        "website": false,
+        "resume": true,
+        "timeline": false,
+        "featured": false
+      },
+      "highlights": [],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "srmist-btech",
+      "degree": "B.Tech in Computer Science and Engineering",
+      "institution": "SRM Institute of Science and Technology",
+      "location": "Kattankulathur, Tamil Nadu",
+      "period": {
+        "start": "2024-08",
+        "end": "2028-05"
+      },
+      "gpa": "8.53 / 10.0",
+      "status": "published",
+      "tags": [
+        "computer-science",
+        "software-engineering"
+      ],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": false
+      },
+      "highlights": [
+        "Core coursework: Data Structures & Algorithms, OOP, DBMS, Operating Systems, Computer Networks"
+      ],
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "velammal",
+      "degree": "Class X (CBSE)",
+      "institution": "Velammal New Gen School",
+      "location": "Chennai, Tamil Nadu",
+      "period": {
+        "start": "2020-06",
+        "end": "2022-05"
+      },
+      "gpa": "89%",
+      "status": "published",
+      "tags": [],
+      "visibility": {
+        "website": false,
+        "resume": true,
+        "timeline": false,
+        "featured": false
+      },
+      "highlights": [],
+      "updatedAt": "2026-10-03"
+    }
+  ],
+  "certifications": [
+    {
+      "schemaVersion": 1,
+      "id": "nptel-dbms",
+      "title": "Database Management Systems (65%)",
+      "issuer": "NPTEL",
+      "period": {
+        "start": "2025-01",
+        "end": null
+      },
+      "status": "published",
+      "tags": [
+        "sql"
+      ],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": false,
+        "featured": false
+      },
+      "resumeWeight": 1,
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nptel-java",
+      "title": "Java Programming (93.7%)",
+      "issuer": "NPTEL",
+      "period": {
+        "start": "2025-01",
+        "end": null
+      },
+      "status": "published",
+      "tags": [
+        "java"
+      ],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": false,
+        "featured": false
+      },
+      "resumeWeight": 1,
+      "updatedAt": "2026-10-03"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "nptel-oop",
+      "title": "Object-Oriented Programming (75%)",
+      "issuer": "NPTEL",
+      "period": {
+        "start": "2025-01",
+        "end": null
+      },
+      "status": "published",
+      "tags": [
+        "java"
+      ],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": false,
+        "featured": false
+      },
+      "resumeWeight": 1,
+      "updatedAt": "2026-10-03"
+    }
+  ],
+  "hackathons": [
+    {
+      "schemaVersion": 1,
+      "id": "hack-the-knight",
+      "name": "Hack The Knight",
+      "organizer": "SRM IST",
+      "result": "Finalist",
+      "teamSize": 4,
+      "period": {
+        "start": "2025-10",
+        "end": "2025-10"
+      },
+      "status": "published",
+      "tags": [
+        "fullstack"
+      ],
+      "projectTitle": "36-hour hackathon",
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": false
+      },
+      "resumeWeight": 2,
+      "updatedAt": "2026-10-03",
+      "body": "Qualified for the final round in this intensive 36-hour hackathon."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "sih-2025",
+      "name": "Smart India Hackathon 2025",
+      "organizer": "Government of India",
+      "result": "Participant",
+      "teamSize": 6,
+      "period": {
+        "start": "2025-09",
+        "end": "2025-09"
+      },
+      "status": "published",
+      "tags": [
+        "fullstack",
+        "ai"
+      ],
+      "projectTitle": "National Level Government Hackathon",
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": false
+      },
+      "resumeWeight": 2,
+      "updatedAt": "2026-10-03",
+      "body": "Level 2 qualifier for the Smart India Hackathon 2025, a national-level government hackathon."
+    },
+    {
+      "schemaVersion": 1,
+      "id": "the-last-commit",
+      "name": "The Last Commit",
+      "organizer": "SRM IST",
+      "result": "Winner",
+      "teamSize": 4,
+      "period": {
+        "start": "2025-11",
+        "end": "2025-11"
+      },
+      "status": "published",
+      "tags": [
+        "fullstack",
+        "backend"
+      ],
+      "projectTitle": "1st Place Winner",
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": false
+      },
+      "resumeWeight": 3,
+      "updatedAt": "2026-10-03",
+      "body": "Secured 1st place and ₹5,000 prize in The Last Commit hackathon at SRM IST."
+    }
+  ],
+  "publications": [
+    {
+      "schemaVersion": 1,
+      "id": "liver-fibrosis-staging",
+      "title": "Automated Liver Fibrosis Staging Using a Transformer-based Weighted Soft Voting Ensemble",
+      "publisher": "2026 International Conference on Natural Language Processing and Computer Vision (ICNPCV)",
+      "period": {
+        "start": "2026-07",
+        "end": "2026-07"
+      },
+      "status": "published",
+      "tags": [
+        "ai",
+        "ml",
+        "cv",
+        "transformers"
+      ],
+      "visibility": {
+        "website": true,
+        "resume": true,
+        "timeline": true,
+        "featured": true
+      },
+      "resumeWeight": 4,
+      "description": "Research work on a transformer-based medical AI approach using a weighted soft-voting ensemble for automated liver fibrosis staging. Presented at Global Academy of Technology, Bengaluru.",
+      "updatedAt": "2026-10-03"
+    }
+  ],
+  "story": [
+    {
+      "schemaVersion": 1,
+      "chapter": 0,
+      "slug": "signal",
+      "title": "Signal",
+      "tagline": "Incoming transmission.",
+      "status": "published",
+      "updatedAt": "2026-10-03",
+      "body": "A signal cuts through the static. This is the digital universe of Vishal Gastu — where code constructs reality, and AI systems learn to observe their own reasoning."
+    },
+    {
+      "schemaVersion": 1,
+      "chapter": 1,
+      "slug": "genesis",
+      "title": "Genesis",
+      "tagline": "The origin.",
+      "status": "published",
+      "updatedAt": "2026-10-03",
+      "body": "It didn't start with neural networks or reinforcement learning. It started with a simple fascination for how things are built under the hood. Growing up in Chennai, I spent hours trying to understand how software systems logically piece together to create seamless experiences.\n\nThe real turning point wasn't just learning to code, it was realizing that code could be used to solve complex, systemic problems. From the very beginning, I was drawn to the backend — the hidden infrastructure that makes everything else possible.\n\nThat early curiosity evolved into a deep interest in software engineering and artificial intelligence. I wanted to move beyond just writing scripts and start architecting systems that could learn, adapt, and scale."
+    },
+    {
+      "schemaVersion": 1,
+      "chapter": 2,
+      "slug": "journey",
+      "title": "Journey",
+      "tagline": "The path of learning.",
+      "status": "published",
+      "updatedAt": "2026-10-03",
+      "body": "My formal journey took shape at the SRM Institute of Science and Technology. Pursuing a B.Tech in Computer Science gave me the rigorous foundation I needed — data structures, operating systems, and database management.\n\nBut the classroom was only half the story. I threw myself into hackathons like Hack The Knight and Smart India Hackathon. These high-pressure environments forced me to learn fast, fail quickly, and build robust full-stack applications on tight deadlines.\n\nDuring my time at Qube Cinema Technologies, I experienced the reality of enterprise-grade software. Building Go-based REST APIs and optimizing complex PostgreSQL queries taught me what it takes to maintain reliable, performant systems in production. It was no longer just about making it work; it was about making it scalable."
+    },
+    {
+      "schemaVersion": 1,
+      "chapter": 3,
+      "slug": "transmissions",
+      "title": "Transmissions",
+      "tagline": "Voices from the network.",
+      "status": "published",
+      "updatedAt": "2026-10-03",
+      "body": "Nobody builds in a vacuum. Every project I've shipped and every system I've designed has been shaped by the mentors who challenged my assumptions and the teammates who pushed the boundaries with me.\n\nThese transmissions are the echoes of those collaborations — perspectives from the people I've had the privilege of working alongside."
+    },
+    {
+      "schemaVersion": 1,
+      "chapter": 4,
+      "slug": "build",
+      "title": "Build",
+      "tagline": "Turning point.",
+      "status": "published",
+      "updatedAt": "2026-10-03",
+      "body": "The turning point came when I realized I didn't just want to build apps; I wanted to build intelligence. I started diving deep into Large Language Models, but I was frustrated by their unpredictable nature. That frustration led to CRAFT.\n\nBy combining reinforcement learning with deterministic execution verifiers, I found a way to eliminate reward noise in small language models. I managed to push the accuracy of a 3.8B model significantly higher and deployed it as a lightweight CPU artifact. It was a breakthrough moment—proving that you don't always need massive compute to achieve meaningful AI capabilities.\n\nSimultaneously, I built Synergy and Viren, proving that I could handle both large-scale full-stack systems and secure, on-device mobile applications. The ability to span the entire stack, from a React frontend down to on-device LLM inference, completely changed how I approach problem-solving."
+    },
+    {
+      "schemaVersion": 1,
+      "chapter": 5,
+      "slug": "archives",
+      "title": "Archives",
+      "tagline": "The supporting evidence.",
+      "status": "published",
+      "updatedAt": "2026-10-03",
+      "body": "The work doesn't stop at personal projects. I've presented research on automated medical AI for liver fibrosis staging, secured a 1st place victory at The Last Commit hackathon, and earned multiple certifications in core Java and DBMS concepts.\n\nThese archives are the tangible proof of continuous learning and a refusal to settle for just the basics."
+    },
+    {
+      "schemaVersion": 1,
+      "chapter": 6,
+      "slug": "galaxy",
+      "title": "Galaxy",
+      "tagline": "The public record.",
+      "status": "published",
+      "updatedAt": "2026-10-03",
+      "body": "Open source is the ultimate proving ground. My GitHub is the public record of everything I build in the open—the successes, the late-night commits, and the continuous iteration. It is the raw data of my journey as an engineer."
+    },
+    {
+      "schemaVersion": 1,
+      "chapter": 7,
+      "slug": "next",
+      "title": "Next",
+      "tagline": "What drives me now.",
+      "status": "published",
+      "updatedAt": "2026-10-03",
+      "body": "Today, my focus is entirely on the intersection of scalable backend engineering and reliable AI. As part of my ongoing research at SRMIST, I am designing verifiable runtime safety monitors for AI agents, ensuring that as systems become more autonomous, they remain secure and compliant.\n\nI'm driven by the challenge of taking AI systems out of the research lab and into production—deploying them safely, evaluating them rigorously, and scaling them efficiently.\n\nI'm looking for opportunities to build the next generation of intelligent software. Let's create what doesn't exist yet, and build it well enough to change what comes next."
+    }
+  ],
+  "resumeProfiles": [
+    {
+      "schemaVersion": 1,
+      "id": "ai-engineer",
+      "label": "AI Engineer",
+      "targetPages": 1,
+      "tagWeights": {
+        "ai": 3,
+        "ml": 3,
+        "python": 2,
+        "research": 2,
+        "fullstack": 0.5,
+        "mobile": 0
+      },
+      "sectionLimits": {
+        "projects": 3,
+        "experience": 3,
+        "certifications": 3,
+        "achievements": 3,
+        "skills": 12
+      },
+      "pin": [
+        "craft",
+        "urop-srmist"
+      ],
+      "exclude": [],
+      "summaryVariant": "ai-engineer"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "backend-engineer",
+      "label": "Backend Engineer",
+      "targetPages": 1,
+      "tagWeights": {
+        "backend": 3,
+        "go": 3,
+        "python": 2,
+        "sql": 2,
+        "postgres": 2,
+        "fullstack": 1,
+        "ai": 0.5
+      },
+      "sectionLimits": {
+        "projects": 3,
+        "experience": 3,
+        "certifications": 3,
+        "achievements": 3,
+        "skills": 12
+      },
+      "pin": [
+        "qube-cinema-intern"
+      ],
+      "exclude": [],
+      "summaryVariant": "backend-engineer"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "fullstack-developer",
+      "label": "Full-Stack Developer",
+      "targetPages": 1,
+      "tagWeights": {
+        "fullstack": 3,
+        "frontend": 2,
+        "backend": 2,
+        "react": 2,
+        "nextjs": 2,
+        "typescript": 2
+      },
+      "sectionLimits": {
+        "projects": 3,
+        "experience": 3,
+        "certifications": 3,
+        "achievements": 3,
+        "skills": 12
+      },
+      "pin": [
+        "synergy",
+        "qube-cinema-intern"
+      ],
+      "exclude": [],
+      "summaryVariant": "fullstack-developer"
+    },
+    {
+      "schemaVersion": 1,
+      "id": "general",
+      "label": "General",
+      "targetPages": 1,
+      "tagWeights": {
+        "ai": 1,
+        "backend": 1,
+        "fullstack": 1,
+        "research": 1,
+        "frontend": 1,
+        "mobile": 1
+      },
+      "sectionLimits": {
+        "projects": 4,
+        "experience": 3,
+        "certifications": 3,
+        "achievements": 3,
+        "skills": 12
+      },
+      "pin": [],
+      "exclude": [],
+      "summaryVariant": "general"
+    }
+  ]
+}

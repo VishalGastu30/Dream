@@ -1,32 +1,22 @@
-import type { Metadata, Viewport } from "next";
-import { SkipLink } from "@/components/SkipLink";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { DM_Sans, JetBrains_Mono } from 'next/font/google';
+import './globals.css';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: {
-    default: "Vishal Gastu // Digital Universe",
-    template: "%s — Vishal Gastu",
-  },
-  description:
-    "Creating what doesn't exist yet, and building it well enough to change what comes next.",
-  metadataBase: new URL(
-    process.env["SITE_URL"] ?? "https://your-project.pages.dev",
-  ),
-  robots: {
-    index: true,
-    follow: true,
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    siteName: "Vishal Gastu // Digital Universe",
-  },
-};
-
-export const viewport: Viewport = {
-  // Near-white signal colour per brand-brief.md
-  themeColor: "#F2F4F8",
-  colorScheme: "dark",
+  title: 'Vishal Gastu — Digital Universe',
+  description: 'AI Engineer & Software Developer',
 };
 
 export default function RootLayout({
@@ -35,11 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${dmSans.variable} ${jetbrainsMono.variable}`}>
       <body>
-        {/* SkipLink is a Client Component — event handlers require "use client" */}
-        <SkipLink />
-        {children}
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-background focus:text-foreground">
+          Skip to content
+        </a>
+        <main id="main-content">
+          {children}
+        </main>
       </body>
     </html>
   );
