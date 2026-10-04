@@ -1,21 +1,68 @@
-/**
- * scripts/build-career.ts
- *
- * Merges all content/ entities into:
- *   - content/generated/career.json  (typed, used by apps/web at build time)
- *   - content/generated/llm-context.json  (used by apps/api for the AI assistant)
- *
- * Phase 0: stub.
- * Phase 3: implement full merge of profile, projects, experience, education,
- *          certifications, hackathons, achievements, skills, publications.
- *          Only "published" entities and "public" visibility fields are included.
- *          The llm-context.json must contain ONLY published public content.
- *
- * Usage: pnpm build:career
- */
+import fs from 'fs';
+import path from 'path';
+import yaml from 'js-yaml';
+import matter from 'gray-matter';
 
-console.log(
-  "build:career — Phase 0 stub.\n" +
-  "Phase 3 will implement the full career.json + llm-context.json merge.",
-);
-process.exit(0);
+const contentDir = path.join(process.cwd(), 'content');
+const outputDir = path.join(process.cwd(), 'apps/web/src/data');
+const outputFile = path.join(outputDir, 'career.json');
+
+// Helper to read YAML files
+function readYamlDir(dirName: string) {
+  const dirPath = path.join(contentDir, dirName);
+  if (!fs.existsSync(dirPath)) return [];
+  
+  return fs.readdirSync(dirPath)
+    .filter(file => file.endsWith('.yml') || file.endsWith('.yaml'))
+    .map(file => {
+      const content = fs.readFileSync(path.join(dirPath, file), 'utf8');
+      return yaml.load(content);
+    });
+}
+
+// Helper to read MDX files
+function readMdxDir(dirName: string) {
+  const dirPath = path.join(contentDir, dirName);
+  if (!fs.existsSync(dirPath)) return [];
+  
+  return fs.readdirSync(dirPath)
+    .filter(file => file.endsWith('.mdx'))
+    .map(file => {
+      const { data, content } = matter(fs.readFileSync(path.join(dirPath, file), 'utf8'));
+      return { ...data, body: content.trim() };
+    });
+}
+
+async function buildCareer() {
+  console.log('Building career.json...');
+  
+  // Read Profile
+  const profileContent = fs.readFileSync(path.join(contentDir, 'profile.yml'), 'utf8');
+  const profile = yaml.load(profileContent);
+
+  // Read Tags
+  const tagsContent = fs.readFileSync(path.join(contentDir, 'tags.yml'), 'utf8');
+  const tags = yaml.load(tagsContent);
+
+  const careerData = {
+    profile,
+    tags,
+    projects: readMdxDir('projects'),
+    experience: readYamlDir('experience'),
+    education: readYamlDir('education'),
+    certifications: readYamlDir('certifications'),
+    hackathons: readMdxDir('hackathons'),
+    publications: readYamlDir('publications'),
+    story: readMdxDir('story').sort((a: any, b: any) => a.chapter - b.chapter),
+    resumeProfiles: readYamlDir('resume-profiles')
+  };
+
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  fs.writeFileSync(outputFile, JSON.stringify(careerData, null, 2));
+  console.log(`✅ career.json successfully written to ${outputFile}`);
+}
+
+buildCareer().catch(console.error);
