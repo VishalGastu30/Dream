@@ -20,4 +20,44 @@
 #
 # Phase 0: No assets yet. Add entries when assets are sourced.
 
-assets: []
+assets:
+  - id: proj-img-craft
+    type: image
+    file: assets/images/projects/craft.png
+    source_url: "user-provided"
+    author: "Vishal Gastu"
+    license: "Proprietary / User Owned"
+    attribution: "Original image by Vishal Gastu."
+    retrieved: "2026-10-04"
+    modified: []
+    used_in: [scene-projects, project-case-study]
+  - id: proj-img-synergy
+    type: image
+    file: assets/images/projects/synergy.jpg
+    source_url: "user-provided"
+    author: "Vishal Gastu"
+    license: "Proprietary / User Owned"
+    attribution: "Original image by Vishal Gastu."
+    retrieved: "2026-10-04"
+    modified: []
+    used_in: [scene-projects, project-case-study]
+  - id: proj-img-viren
+    type: image
+    file: assets/images/projects/viren.webp
+    source_url: "user-provided"
+    author: "Vishal Gastu"
+    license: "Proprietary / User Owned"
+    attribution: "Original image by Vishal Gastu."
+    retrieved: "2026-10-04"
+    modified: []
+    used_in: [scene-projects, project-case-study]
+  - id: proj-img-general
+    type: image
+    file: assets/images/projects/general.webp
+    source_url: "user-provided"
+    author: "Vishal Gastu"
+    license: "Proprietary / User Owned"
+    attribution: "Original image by Vishal Gastu."
+    retrieved: "2026-10-04"
+    modified: []
+    used_in: [scene-projects, project-case-study]

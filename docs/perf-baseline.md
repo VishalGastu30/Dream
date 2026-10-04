@@ -1,30 +1,20 @@
-# Performance Baseline
+# 3D Performance Baseline
 
-> **Protocol:** Chrome DevTools, throttled "Mid-tier Mobile" preset (4× CPU slowdown, Fast 4G network).
-> Lighthouse mobile preset for scores. Real device measurements noted separately.
-> Record every measurement here — do not delete old entries.
+> **Roadmap ref:** `docs/PORTFOLIO_MASTER_PLAN.md §14 — Phase 2`
 
----
+This document records the frames per second (FPS) of the heaviest 3D features (tested in `apps/sandbox-3d`) to ensure we meet the performance budget.
 
-## Phase 2 — Risk prototypes (target: before scene code begins)
-*Fill in during P2-05: dot+spline+bloom prototype, instanced points prototype, unified material test.*
+## Test Environment
+- **Device:** [Pending user test - e.g. iPhone 13]
+- **Browser:** [Pending user test - e.g. Safari]
+- **Date:** 2026-10-04
 
-### Date: — | Phase: 2 | Scene: risk-prototypes
-| Metric | Value | Budget | Pass? |
-|---|---|---|---|
-| Lighthouse Performance | — | ≥ 80 (cinematic) | — |
-| LCP | — | ≤ 2.5s | — |
-| INP | — | ≤ 200ms | — |
-| CLS | — | ≤ 0.1 | — |
-| Initial 3D payload | — | ≤ 3 MB | — |
-| FPS — High (desktop) | — | 60 | — |
-| FPS — Medium (throttled) | — | ≥ 30 | — |
-| FPS — Low-end real device | — | N/A (DOM only) | — |
-| Device tested | — | — | — |
-| Notes | | | |
+## Risk Prototypes (P2-05)
 
----
+| Prototype | Description | Target FPS | Actual FPS | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Test A** | Spline + Bloom (Post-processing) | ≥ 45 | *Pending* | 🟡 Needs Testing |
+| **Test B** | Instanced Mesh (50k stars) | 60 | *Pending* | 🟡 Needs Testing |
+| **Test C** | Unified Ghost Light Material | ≥ 55 | *Pending* | 🟡 Needs Testing |
 
-## Subsequent measurements (add below as work progresses)
-
-*(No entries yet — Phase 0)*
+*Note: Automated headless testing via Puppeteer failed due to lack of a physical GPU (WebGL context error). These numbers must be filled manually by running `pnpm --filter sandbox-3d dev` and loading the local network URL on a mobile device.*
