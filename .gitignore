@@ -35,3 +35,5 @@ Thumbs.db
 *.log
 *.local
 coverage/
+apps/web/public/resume/
+apps/web/public/assets/
