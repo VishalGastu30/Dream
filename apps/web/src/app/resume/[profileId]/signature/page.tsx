@@ -1,20 +1,24 @@
 import careerData from "@/data/career.json";
 import { resolveAllBullets, selectItems } from "@dream/resume-engine";
-import type { ResumeProfile } from "@dream/schema";
+import type { Certification, Education, Experience, Project, ResumeProfile } from "@dream/schema";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return (careerData.resumeProfiles || []).map((profile: any) => ({
-    profileId: profile.id,
-  }));
+  return (careerData.resumeProfiles || []).map(
+    (profile: (typeof careerData.resumeProfiles)[number]) => ({
+      profileId: profile.id,
+    }),
+  );
 }
 
 export async function generateMetadata({
   params,
 }: { params: Promise<{ profileId: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  const profile = careerData.resumeProfiles.find((p: any) => p.id === resolvedParams.profileId);
+  const profile = careerData.resumeProfiles.find(
+    (p: (typeof careerData.resumeProfiles)[number]) => p.id === resolvedParams.profileId,
+  );
   if (!profile) return {};
 
   return {
@@ -30,7 +34,9 @@ export default async function SignatureResumePage({
   params,
 }: { params: Promise<{ profileId: string }> }) {
   const resolvedParams = await params;
-  const profileData = careerData.resumeProfiles.find((p: any) => p.id === resolvedParams.profileId);
+  const profileData = careerData.resumeProfiles.find(
+    (p: (typeof careerData.resumeProfiles)[number]) => p.id === resolvedParams.profileId,
+  );
 
   if (!profileData) {
     notFound();
@@ -40,14 +46,18 @@ export default async function SignatureResumePage({
   const { profile: user, experience, projects, education, certifications } = careerData;
 
   const selectedExperience = selectItems(
-    experience || [],
+    (experience || []) as unknown as Experience[],
     profile,
     profile.sectionLimits?.experience,
   );
-  const selectedProjects = selectItems(projects || [], profile, profile.sectionLimits?.projects);
-  const selectedEducation = education;
+  const selectedProjects = selectItems(
+    (projects || []) as unknown as Project[],
+    profile,
+    profile.sectionLimits?.projects,
+  );
+  const selectedEducation = (education || []) as unknown as Education[];
   const selectedCertifications = selectItems(
-    certifications || [],
+    (certifications || []) as unknown as Certification[],
     profile,
     profile.sectionLimits?.certifications,
   );
@@ -86,16 +96,14 @@ export default async function SignatureResumePage({
             Experience
           </h2>
           <div className="space-y-4">
-            {selectedExperience.map((exp: any) => {
+            {selectedExperience.map((exp: Experience) => {
               const bullets = resolveAllBullets(exp.bullets, profile);
               return (
                 <div key={exp.id}>
                   <div className="flex justify-between items-baseline mb-1">
                     <h3 className="font-bold text-foreground">
-                      {exp.role}{" "}
-                      <span className="text-muted font-normal">
-                        at {exp.company || exp.organization}
-                      </span>
+                      {exp.title}{" "}
+                      <span className="text-muted font-normal">at {exp.organization}</span>
                     </h3>
                     <span className="text-[9pt] text-accent-dim">
                       {exp.period.start} - {exp.period.end || "Present"}
@@ -104,6 +112,7 @@ export default async function SignatureResumePage({
                   {bullets.length > 0 && (
                     <ul className="text-xs text-muted space-y-1.5 mt-2">
                       {bullets.map((b: string, i: number) => (
+                        // biome-ignore lint/suspicious/noArrayIndexKey: bullet text has no stable id
                         <li key={i} className="flex gap-2">
                           <span className="text-accent select-none">▹</span>
                           <span>{b}</span>
@@ -125,7 +134,7 @@ export default async function SignatureResumePage({
             Featured Projects
           </h2>
           <div className="space-y-4">
-            {selectedProjects.map((proj: any) => {
+            {selectedProjects.map((proj: Project) => {
               const bullets = resolveAllBullets(proj.bullets, profile);
               return (
                 <div key={proj.id}>
@@ -141,6 +150,7 @@ export default async function SignatureResumePage({
                   {bullets.length > 0 && (
                     <ul className="text-xs text-muted space-y-1.5">
                       {bullets.map((b: string, i: number) => (
+                        // biome-ignore lint/suspicious/noArrayIndexKey: bullet text has no stable id
                         <li key={i} className="flex gap-2">
                           <span className="text-accent select-none">▹</span>
                           <span>{b}</span>
@@ -163,12 +173,10 @@ export default async function SignatureResumePage({
               Education
             </h2>
             <div className="space-y-3">
-              {selectedEducation.map((edu: any) => (
+              {selectedEducation.map((edu: Education) => (
                 <div key={edu.id}>
                   <h3 className="font-bold text-foreground text-xs">{edu.institution}</h3>
-                  <div className="text-[9pt] text-muted">
-                    {edu.degree} in {edu.major}
-                  </div>
+                  <div className="text-[9pt] text-muted">{edu.degree}</div>
                   <div className="text-[9pt] text-accent-dim mt-0.5">
                     {edu.period.start} - {edu.period.end || "Present"}
                   </div>
@@ -185,11 +193,11 @@ export default async function SignatureResumePage({
               Certifications
             </h2>
             <div className="space-y-3">
-              {selectedCertifications.map((cert: any) => (
+              {selectedCertifications.map((cert: Certification) => (
                 <div key={cert.id}>
                   <h3 className="font-bold text-foreground text-xs">{cert.title}</h3>
                   <div className="text-[9pt] text-muted">{cert.issuer}</div>
-                  <div className="text-[9pt] text-accent-dim mt-0.5">{cert.date}</div>
+                  <div className="text-[9pt] text-accent-dim mt-0.5">{cert.period.start}</div>
                 </div>
               ))}
             </div>
