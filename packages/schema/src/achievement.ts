@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Id, DateRange, Visibility } from "./shared.js";
+import { DateRange, Id, Visibility } from "./shared.js";
 
 export const Achievement = z.object({
   schemaVersion: z.literal(1),

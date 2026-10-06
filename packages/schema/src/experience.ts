@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Id, DateRange, Visibility, Bullet } from "./shared.js";
+import { Bullet, DateRange, Id, Visibility } from "./shared.js";
 
 export const Experience = z.object({
   schemaVersion: z.literal(1),

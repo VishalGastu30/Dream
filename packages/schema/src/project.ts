@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Id, DateRange, Visibility, Link, Media, Bullet } from "./shared.js";
+import { Bullet, DateRange, Id, Link, Media, Visibility } from "./shared.js";
 
 export const Project = z.object({
   schemaVersion: z.literal(1),
@@ -15,10 +15,12 @@ export const Project = z.object({
   visibility: Visibility,
   resumeWeight: z.number().min(0).max(5).default(1),
   bullets: z.array(Bullet).default([]),
-  scene: z.object({
-    artifact: z.string(),
-    accent: z.string().optional(),
-  }).optional(),
+  scene: z
+    .object({
+      artifact: z.string(),
+      accent: z.string().optional(),
+    })
+    .optional(),
   media: z.array(Media).default([]),
   updatedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 });

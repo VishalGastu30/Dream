@@ -28,8 +28,8 @@ export const Link = z.object({
 
 export const Media = z.object({
   type: z.enum(["image", "video"]),
-  src: z.string().startsWith("/"),   // must be a local path, typically /images/...
-  alt: z.string().min(10),           // non-trivial alt text required
+  src: z.string().startsWith("/"), // must be a local path, typically /images/...
+  alt: z.string().min(10), // non-trivial alt text required
   width: z.number().int().positive(),
   height: z.number().int().positive(),
 });
