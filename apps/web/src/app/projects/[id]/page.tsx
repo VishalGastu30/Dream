@@ -1,4 +1,5 @@
 import careerData from "@/data/career.json";
+import type { Project } from "@dream/schema";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,7 +7,8 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 export function generateStaticParams() {
-  return careerData.projects.map((project: any) => ({
+  const projects = careerData.projects as unknown as Project[];
+  return projects.map((project) => ({
     id: project.id,
   }));
 }
@@ -15,7 +17,8 @@ export async function generateMetadata({
   params,
 }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  const project = careerData.projects.find((p: any) => p.id === resolvedParams.id);
+  const projects = careerData.projects as unknown as Project[];
+  const project = projects.find((p) => p.id === resolvedParams.id);
   if (!project) return {};
 
   return {
@@ -26,14 +29,16 @@ export async function generateMetadata({
 
 export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
-  const project = careerData.projects.find((p: any) => p.id === resolvedParams.id);
+  const projects = careerData.projects as unknown as Project[];
+  const project = projects.find((p) => p.id === resolvedParams.id);
 
   if (!project) {
     notFound();
   }
 
+  type Asset = (typeof careerData.assets)[number];
   const getProjectImage = (projectId: string) => {
-    const asset = careerData.assets.find((a: any) => a.id === `proj-img-${projectId}`);
+    const asset = careerData.assets.find((a: Asset) => a.id === `proj-img-${projectId}`);
     return asset ? `/${asset.file}` : "/assets/images/projects/general.webp";
   };
 
@@ -85,7 +90,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
                 Links
               </span>
               <div className="flex flex-col gap-1">
-                {project.links.map((link: any) => (
+                {project.links.map((link: (typeof project.links)[number]) => (
                   <a
                     key={link.url}
                     href={link.url}
@@ -111,7 +116,8 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
       </div>
 
       <article className="prose prose-invert prose-p:text-muted prose-p:leading-relaxed prose-headings:text-foreground prose-headings:font-heading prose-a:text-accent prose-a:decoration-accent/30 hover:prose-a:decoration-accent prose-a:underline-offset-4 prose-li:text-muted prose-strong:text-foreground max-w-none">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{project.body}</ReactMarkdown>
+        {/* biome-ignore lint/suspicious/noExplicitAny: Required to access body which is missing from schema */}
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{(project as any).body}</ReactMarkdown>
       </article>
 
       {/* Footer tags */}
