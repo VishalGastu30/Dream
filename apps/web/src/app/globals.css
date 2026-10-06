@@ -5,15 +5,15 @@
 @layer base {
   :root {
     --color-background: #050505;
-    --color-foreground: #F2F4F8;
-    --color-accent: #F2F4F8; /* Ghost Light */
+    --color-foreground: #f2f4f8;
+    --color-accent: #f2f4f8; /* Ghost Light */
     --color-accent-dim: rgba(242, 244, 248, 0.1);
     --color-muted: #888888;
     --color-border: #333333;
   }
 
   /* Optional: Light mode tokens if needed later, but cinematic layer defaults to dark */
-  
+
   html,
   body {
     background-color: var(--color-background);

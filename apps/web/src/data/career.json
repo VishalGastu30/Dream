@@ -99,6 +99,56 @@
       "general"
     ]
   },
+  "assets": [
+    {
+      "id": "proj-img-craft",
+      "type": "image",
+      "file": "assets/images/projects/craft.png",
+      "source_url": "user-provided",
+      "author": "Vishal Gastu",
+      "license": "Proprietary / User Owned",
+      "attribution": "Original image by Vishal Gastu.",
+      "retrieved": "2026-10-04",
+      "modified": [],
+      "used_in": ["scene-projects", "project-case-study"]
+    },
+    {
+      "id": "proj-img-synergy",
+      "type": "image",
+      "file": "assets/images/projects/synergy.jpg",
+      "source_url": "user-provided",
+      "author": "Vishal Gastu",
+      "license": "Proprietary / User Owned",
+      "attribution": "Original image by Vishal Gastu.",
+      "retrieved": "2026-10-04",
+      "modified": [],
+      "used_in": ["scene-projects", "project-case-study"]
+    },
+    {
+      "id": "proj-img-viren",
+      "type": "image",
+      "file": "assets/images/projects/viren.webp",
+      "source_url": "user-provided",
+      "author": "Vishal Gastu",
+      "license": "Proprietary / User Owned",
+      "attribution": "Original image by Vishal Gastu.",
+      "retrieved": "2026-10-04",
+      "modified": [],
+      "used_in": ["scene-projects", "project-case-study"]
+    },
+    {
+      "id": "proj-img-general",
+      "type": "image",
+      "file": "assets/images/projects/general.webp",
+      "source_url": "user-provided",
+      "author": "Vishal Gastu",
+      "license": "Proprietary / User Owned",
+      "attribution": "Original image by Vishal Gastu.",
+      "retrieved": "2026-10-04",
+      "modified": [],
+      "used_in": ["scene-projects", "project-case-study"]
+    }
+  ],
   "projects": [
     {
       "schemaVersion": 1,
@@ -110,22 +160,8 @@
         "start": "2026-01",
         "end": "2026-05"
       },
-      "tags": [
-        "ai",
-        "python",
-        "pytorch",
-        "huggingface",
-        "research"
-      ],
-      "stack": [
-        "Python",
-        "PyTorch",
-        "HuggingFace",
-        "TRL",
-        "GRPO",
-        "QLoRA",
-        "GGUF"
-      ],
+      "tags": ["ai", "python", "pytorch", "huggingface", "research"],
+      "stack": ["Python", "PyTorch", "HuggingFace", "TRL", "GRPO", "QLoRA", "GGUF"],
       "repo": "vishalgastu30/craft",
       "links": [],
       "visibility": {
@@ -138,12 +174,7 @@
       "bullets": [
         {
           "text": "Built a four-phase fine-tuning framework combining GRPO-based reinforcement learning, QLoRA, step-level self-supervised contrastive learning, and adaptive curriculum learning.",
-          "tags": [
-            "ai",
-            "research",
-            "python",
-            "pytorch"
-          ],
+          "tags": ["ai", "research", "python", "pytorch"],
           "variants": {
             "ai-engineer": "Architected a four-phase LLM fine-tuning pipeline using GRPO, QLoRA, and adaptive curriculum learning for resource-constrained environments.",
             "ml-research": "Developed a novel four-phase fine-tuning framework integrating GRPO-based RL, QLoRA, and self-supervised contrastive learning."
@@ -151,30 +182,21 @@
         },
         {
           "text": "Replaced neural reward models with deterministic execution verifiers (a math interpreter and a logic classifier) to eliminate reward noise.",
-          "tags": [
-            "ai",
-            "research"
-          ],
+          "tags": ["ai", "research"],
           "variants": {
             "ai-engineer": "Engineered deterministic execution verifiers (math interpreter, logic classifier) to replace neural reward models, completely eliminating reward noise."
           }
         },
         {
           "text": "On Phi-3-Mini (3.8B), delivered consistent accuracy gains over baseline — GSM8K 48%→62%, StrategyQA 42%→71%, MMLU 37%→63% — re-validated across multiple runs (±1%).",
-          "tags": [
-            "ai",
-            "research"
-          ],
+          "tags": ["ai", "research"],
           "variants": {
             "ai-engineer": "Achieved significant accuracy gains on Phi-3-Mini (3.8B): GSM8K (+14%), StrategyQA (+29%), and MMLU (+26%), with robust re-validation."
           }
         },
         {
           "text": "Quantized the final model to a 4-bit GGUF (~2.2 GB) artifact for CPU-only inference.",
-          "tags": [
-            "ai",
-            "python"
-          ],
+          "tags": ["ai", "python"],
           "variants": {
             "backend-engineer": "Optimized model deployment by quantizing the final artifact to a 4-bit GGUF (~2.2 GB), enabling efficient CPU-only inference."
           }
@@ -198,21 +220,8 @@
         "start": "2025-06",
         "end": "2025-11"
       },
-      "tags": [
-        "fullstack",
-        "nextjs",
-        "react",
-        "typescript",
-        "backend"
-      ],
-      "stack": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Node.js",
-        "REST API"
-      ],
+      "tags": ["fullstack", "nextjs", "react", "typescript", "backend"],
+      "stack": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "REST API"],
       "repo": "vishalgastu30/synergy",
       "links": [],
       "visibility": {
@@ -225,11 +234,7 @@
       "bullets": [
         {
           "text": "Built a full-stack, role-based campus platform connecting Students, Faculty, Management, and Recruiters through verified skill tracking and placement analytics.",
-          "tags": [
-            "fullstack",
-            "nextjs",
-            "typescript"
-          ],
+          "tags": ["fullstack", "nextjs", "typescript"],
           "variants": {
             "fullstack-developer": "Developed a comprehensive role-based campus OS using Next.js and Node.js, integrating skill tracking and real-time analytics.",
             "backend-engineer": "Architected the backend for a campus placement OS, ensuring secure role-based access for students, faculty, and recruiters."
@@ -237,21 +242,14 @@
         },
         {
           "text": "Designed faculty-verification workflows, cohort analytics dashboards, and recruiter talent-discovery pipelines with real-time readiness scoring.",
-          "tags": [
-            "fullstack",
-            "backend"
-          ],
+          "tags": ["fullstack", "backend"],
           "variants": {
             "fullstack-developer": "Designed and implemented faculty-verification workflows and real-time analytics dashboards for talent discovery."
           }
         },
         {
           "text": "Implemented five role-specific portals with a shared design system, mock-data interceptors, and a staged REST API integration layer.",
-          "tags": [
-            "frontend",
-            "react",
-            "typescript"
-          ],
+          "tags": ["frontend", "react", "typescript"],
           "variants": {
             "fullstack-developer": "Built five role-specific portals using a unified design system and robust REST API integration layer."
           }
@@ -275,21 +273,8 @@
         "start": "2025-01",
         "end": "2025-05"
       },
-      "tags": [
-        "mobile",
-        "flutter",
-        "python",
-        "ai",
-        "security"
-      ],
-      "stack": [
-        "Flutter",
-        "Dart",
-        "Python",
-        "SQLite",
-        "Drift ORM",
-        "On-device LLM"
-      ],
+      "tags": ["mobile", "flutter", "python", "ai", "security"],
+      "stack": ["Flutter", "Dart", "Python", "SQLite", "Drift ORM", "On-device LLM"],
       "repo": "vishalgastu30/viren",
       "links": [],
       "visibility": {
@@ -302,11 +287,7 @@
       "bullets": [
         {
           "text": "Built an offline-capable app that reconstructs investment portfolios from broker emails and encrypted financial documents.",
-          "tags": [
-            "mobile",
-            "flutter",
-            "python"
-          ],
+          "tags": ["mobile", "flutter", "python"],
           "variants": {
             "mobile-developer": "Developed an offline-first Flutter application to securely reconstruct investment portfolios from raw broker emails.",
             "fullstack-developer": "Built an offline-capable Flutter app backed by a local Python data-extraction pipeline for portfolio reconstruction."
@@ -314,22 +295,14 @@
         },
         {
           "text": "Developed an end-to-end pipeline for email authentication, PDF decryption, trade extraction, and portfolio reconciliation.",
-          "tags": [
-            "backend",
-            "python",
-            "security"
-          ],
+          "tags": ["backend", "python", "security"],
           "variants": {
             "backend-engineer": "Engineered a secure data pipeline managing email OAuth, robust PDF decryption, and automated trade reconciliation."
           }
         },
         {
           "text": "Integrated an on-device LLM for semantic repair of noisy financial document text, keeping sensitive data local.",
-          "tags": [
-            "ai",
-            "mobile",
-            "security"
-          ],
+          "tags": ["ai", "mobile", "security"],
           "variants": {
             "ai-engineer": "Integrated an on-device LLM to semantically repair noisy OCR/document text, ensuring zero PII leakage to the cloud.",
             "ml-research": "Applied on-device LLM inference for privacy-preserving semantic text repair on noisy financial documents."
@@ -358,13 +331,7 @@
         "end": "2026-08"
       },
       "status": "published",
-      "tags": [
-        "go",
-        "postgres",
-        "backend",
-        "fullstack",
-        "sql"
-      ],
+      "tags": ["go", "postgres", "backend", "fullstack", "sql"],
       "visibility": {
         "website": true,
         "resume": true,
@@ -375,11 +342,7 @@
       "bullets": [
         {
           "text": "Built JWT-authenticated REST APIs in Go with PostgreSQL-backed reporting workflows for enterprise-grade cinema distribution software.",
-          "tags": [
-            "go",
-            "postgres",
-            "backend"
-          ],
+          "tags": ["go", "postgres", "backend"],
           "variants": {
             "backend-engineer": "Built JWT-authenticated REST APIs in Go with PostgreSQL; designed enterprise reporting workflows.",
             "fullstack-developer": "Developed end-to-end reporting modules with a Go/PostgreSQL backend and a React/Next.js frontend."
@@ -387,23 +350,14 @@
         },
         {
           "text": "Applied SQL optimization, indexing, complex joins, and parameterized queries to keep reporting fast and reliable at scale.",
-          "tags": [
-            "sql",
-            "postgres",
-            "backend"
-          ],
+          "tags": ["sql", "postgres", "backend"],
           "variants": {
             "backend-engineer": "Optimized data access at scale using advanced SQL indexing, complex joins, and parameterized queries."
           }
         },
         {
           "text": "Delivered Release and Mapped CPL reporting modules within a layered Handler–Service–Repository architecture, pairing the Go backend with a React/Next.js frontend.",
-          "tags": [
-            "go",
-            "react",
-            "nextjs",
-            "fullstack"
-          ],
+          "tags": ["go", "react", "nextjs", "fullstack"],
           "variants": {}
         }
       ],
@@ -421,12 +375,7 @@
         "end": null
       },
       "status": "published",
-      "tags": [
-        "python",
-        "ai",
-        "research",
-        "security"
-      ],
+      "tags": ["python", "ai", "research", "security"],
       "visibility": {
         "website": true,
         "resume": true,
@@ -437,11 +386,7 @@
       "bullets": [
         {
           "text": "Designing a runtime monitoring and enforcement framework that grades AI-agent reasoning and actions against SOPs and blocks unsafe actions.",
-          "tags": [
-            "ai",
-            "security",
-            "research"
-          ],
+          "tags": ["ai", "security", "research"],
           "variants": {
             "ai-engineer": "Designing verifiable runtime enforcement frameworks for AI agents to guarantee SOP compliance and block unsafe actions.",
             "ml-research": "Researching verifiable observability for AI agents; designing runtime compliance monitors blocking unsafe trajectory actions."
@@ -449,21 +394,14 @@
         },
         {
           "text": "Architected a four-stage pipeline: Strategy Profiler, Rule Bank, Constraint Compliance Monitor, and Metrics Engine, backed by a trajectory store.",
-          "tags": [
-            "ai",
-            "backend",
-            "python"
-          ],
+          "tags": ["ai", "backend", "python"],
           "variants": {
             "backend-engineer": "Architected a four-stage runtime validation pipeline backed by an auditable trajectory store."
           }
         },
         {
           "text": "Built a literature survey spanning 20+ papers on LLM-agent safety, runtime enforcement, and constraint drift to position the work for publication.",
-          "tags": [
-            "research",
-            "ai"
-          ],
+          "tags": ["research", "ai"],
           "variants": {}
         }
       ],
@@ -505,10 +443,7 @@
       },
       "gpa": "8.53 / 10.0",
       "status": "published",
-      "tags": [
-        "computer-science",
-        "software-engineering"
-      ],
+      "tags": ["computer-science", "software-engineering"],
       "visibility": {
         "website": true,
         "resume": true,
@@ -554,9 +489,7 @@
         "end": null
       },
       "status": "published",
-      "tags": [
-        "sql"
-      ],
+      "tags": ["sql"],
       "visibility": {
         "website": true,
         "resume": true,
@@ -576,9 +509,7 @@
         "end": null
       },
       "status": "published",
-      "tags": [
-        "java"
-      ],
+      "tags": ["java"],
       "visibility": {
         "website": true,
         "resume": true,
@@ -598,9 +529,7 @@
         "end": null
       },
       "status": "published",
-      "tags": [
-        "java"
-      ],
+      "tags": ["java"],
       "visibility": {
         "website": true,
         "resume": true,
@@ -624,9 +553,7 @@
         "end": "2025-10"
       },
       "status": "published",
-      "tags": [
-        "fullstack"
-      ],
+      "tags": ["fullstack"],
       "projectTitle": "36-hour hackathon",
       "visibility": {
         "website": true,
@@ -650,10 +577,7 @@
         "end": "2025-09"
       },
       "status": "published",
-      "tags": [
-        "fullstack",
-        "ai"
-      ],
+      "tags": ["fullstack", "ai"],
       "projectTitle": "National Level Government Hackathon",
       "visibility": {
         "website": true,
@@ -677,10 +601,7 @@
         "end": "2025-11"
       },
       "status": "published",
-      "tags": [
-        "fullstack",
-        "backend"
-      ],
+      "tags": ["fullstack", "backend"],
       "projectTitle": "1st Place Winner",
       "visibility": {
         "website": true,
@@ -704,12 +625,7 @@
         "end": "2026-07"
       },
       "status": "published",
-      "tags": [
-        "ai",
-        "ml",
-        "cv",
-        "transformers"
-      ],
+      "tags": ["ai", "ml", "cv", "transformers"],
       "visibility": {
         "website": true,
         "resume": true,
@@ -824,10 +740,7 @@
         "achievements": 3,
         "skills": 12
       },
-      "pin": [
-        "craft",
-        "urop-srmist"
-      ],
+      "pin": ["craft", "urop-srmist"],
       "exclude": [],
       "summaryVariant": "ai-engineer"
     },
@@ -852,9 +765,7 @@
         "achievements": 3,
         "skills": 12
       },
-      "pin": [
-        "qube-cinema-intern"
-      ],
+      "pin": ["qube-cinema-intern"],
       "exclude": [],
       "summaryVariant": "backend-engineer"
     },
@@ -878,10 +789,7 @@
         "achievements": 3,
         "skills": 12
       },
-      "pin": [
-        "synergy",
-        "qube-cinema-intern"
-      ],
+      "pin": ["synergy", "qube-cinema-intern"],
       "exclude": [],
       "summaryVariant": "fullstack-developer"
     },
