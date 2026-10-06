@@ -23,7 +23,7 @@ export default function ResumeForgePage() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {profiles.map((profile: any) => (
+        {profiles.map((profile: (typeof careerData.resumeProfiles)[number]) => (
           <div
             key={profile.id}
             className="p-8 border border-border rounded-lg bg-background shadow-sm space-y-6 flex flex-col"

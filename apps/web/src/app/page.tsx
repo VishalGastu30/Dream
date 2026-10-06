@@ -1,4 +1,5 @@
 import careerData from "@/data/career.json";
+import type { Experience } from "@dream/schema";
 import Link from "next/link";
 
 export default function Home() {
@@ -7,8 +8,9 @@ export default function Home() {
   // We should pick the top 3 projects for the home page.
   const featuredProjects = projects.slice(0, 3);
 
+  type Asset = (typeof careerData.assets)[number];
   const getProjectImage = (projectId: string) => {
-    const asset = assets.find((a: any) => a.id === `proj-img-${projectId}`);
+    const asset = assets.find((a: Asset) => a.id === `proj-img-${projectId}`);
     return asset ? `/${asset.file}` : "/assets/images/projects/general.webp";
   };
 
@@ -57,7 +59,7 @@ export default function Home() {
 
         <div className="w-full overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar">
           <div className="flex gap-6 px-8 max-w-4xl mx-auto w-max md:w-auto md:grid md:grid-cols-3 md:snap-none md:overflow-visible">
-            {featuredProjects.map((project: any) => (
+            {featuredProjects.map((project: (typeof careerData.projects)[number]) => (
               <Link
                 href={`/projects/${project.id}`}
                 key={project.id}
@@ -103,7 +105,7 @@ export default function Home() {
       <section className="space-y-8 max-w-4xl mx-auto px-8">
         <h2 className="text-3xl font-heading font-bold tracking-tight">Experience</h2>
         <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
-          {experience.map((exp: any, _index: number) => (
+          {(experience as unknown as Experience[]).map((exp, _index: number) => (
             <div
               key={exp.id}
               className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
@@ -117,14 +119,15 @@ export default function Home() {
                   <span className="text-xs font-mono text-accent">
                     {exp.period.start} - {exp.period.end || "Present"}
                   </span>
-                  <h3 className="text-lg font-bold font-heading">{exp.role}</h3>
-                  <span className="text-sm text-muted">{exp.company}</span>
+                  <h3 className="text-lg font-bold font-heading">{exp.title}</h3>
+                  <span className="text-sm text-muted">{exp.organization}</span>
                 </div>
                 <ul className="list-none space-y-2 text-sm text-muted">
-                  {exp.highlights?.slice(0, 2).map((item: string, i: number) => (
+                  {exp.bullets?.slice(0, 2).map((item: { text: string }, i: number) => (
+                    // biome-ignore lint/suspicious/noArrayIndexKey: highlights is a fixed text list with no stable id
                     <li key={i} className="flex gap-2">
                       <span className="text-accent">▹</span>
-                      <span>{item}</span>
+                      <span>{item.text}</span>
                     </li>
                   ))}
                 </ul>

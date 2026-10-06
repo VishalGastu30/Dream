@@ -10,8 +10,9 @@ export const metadata: Metadata = {
 export default function ProjectsIndex() {
   const { projects, assets } = careerData;
 
+  type Asset = (typeof careerData.assets)[number];
   const getProjectImage = (projectId: string) => {
-    const asset = assets.find((a: any) => a.id === `proj-img-${projectId}`);
+    const asset = assets.find((a: Asset) => a.id === `proj-img-${projectId}`);
     return asset ? `/${asset.file}` : "/assets/images/projects/general.webp";
   };
 
@@ -28,7 +29,7 @@ export default function ProjectsIndex() {
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {projects.map((project: any) => (
+        {projects.map((project: (typeof careerData.projects)[number]) => (
           <Link
             href={`/projects/${project.id}`}
             key={project.id}
