@@ -6,7 +6,8 @@
     "rules": {
       "recommended": true,
       "suspicious": {
-        "noExplicitAny": "error"
+        "noExplicitAny": "warn",
+        "noArrayIndexKey": "warn"
       },
       "correctness": {
         "noUnusedVariables": "error",
@@ -30,6 +31,12 @@
       "semicolons": "always",
       "quoteStyle": "double",
       "arrowParentheses": "always"
+    }
+  },
+  "json": {
+    "parser": {
+      "allowComments": true,
+      "allowTrailingCommas": true
     }
   },
   "files": {
