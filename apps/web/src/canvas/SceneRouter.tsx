@@ -2,6 +2,7 @@ import { PostEffects } from "./postprocessing/PostEffects";
 import { BootGenesis } from "./scenes/A_BootGenesis/BootGenesis";
 import { JourneySpline } from "./scenes/B_Journey/JourneySpline";
 import { ProjectsUniverse } from "./scenes/C_Projects/ProjectsUniverse";
+import { Outro } from "./scenes/D_Outro/Outro";
 import { useSceneStore } from "./store/scene.store";
 
 export function SceneRouter() {
@@ -17,6 +18,9 @@ export function SceneRouter() {
 
       {/* Scene C: Projects Universe — Chapter 2 */}
       {chapter >= 1 && chapter <= 3 && <ProjectsUniverse />}
+
+      {/* Scene D: Outro — Chapter 3 */}
+      {chapter >= 2 && <Outro />}
 
       {/* Post-processing effects, tier-gated */}
       <PostEffects />
