@@ -37,7 +37,7 @@ function getFiles(dir: string, extensions: string[]): string[] {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       files.push(...getFiles(fullPath, extensions));
-    } else if (extensions.some(ext => entry.name.endsWith(ext))) {
+    } else if (extensions.some((ext) => entry.name.endsWith(ext))) {
       files.push(fullPath);
     }
   }
@@ -56,9 +56,9 @@ if (fs.existsSync(tagsPath)) {
     if (!parsed.success) {
       reportError("tags.yml", `Invalid tags vocabulary: ${parsed.error.message}`);
     } else {
-      Object.values(parsedTags).forEach(tagList => {
+      Object.values(parsedTags).forEach((tagList) => {
         if (Array.isArray(tagList)) {
-          tagList.forEach(tag => allowedTags.add(tag));
+          tagList.forEach((tag) => allowedTags.add(tag));
         }
       });
     }
@@ -80,9 +80,15 @@ function checkTags(filePath: string, tags: string[] = []) {
 function checkMedia(filePath: string, mediaArray: any[] = []) {
   for (const media of mediaArray) {
     if (media && media.src) {
-      const absolutePath = path.join(process.cwd(), media.src.startsWith("/") ? media.src.slice(1) : media.src);
+      const absolutePath = path.join(
+        process.cwd(),
+        media.src.startsWith("/") ? media.src.slice(1) : media.src,
+      );
       if (!fs.existsSync(absolutePath)) {
-         reportError(path.relative(CONTENT_DIR, filePath), `Media source not found: ${media.src} (looked at ${absolutePath})`);
+        reportError(
+          path.relative(CONTENT_DIR, filePath),
+          `Media source not found: ${media.src} (looked at ${absolutePath})`,
+        );
       }
     }
   }
@@ -109,7 +115,9 @@ function validateFile(filePath: string, schema: any, isMdx: boolean) {
 
   const result = schema.safeParse(data);
   if (!result.success) {
-    const errorDetails = result.error.errors.map((err: any) => `${err.path.join(".")}: ${err.message}`).join(", ");
+    const errorDetails = result.error.errors
+      .map((err: any) => `${err.path.join(".")}: ${err.message}`)
+      .join(", ");
     reportError(relPath, `Validation failed: ${errorDetails}`);
   } else {
     // Cross-validation
@@ -118,7 +126,7 @@ function validateFile(filePath: string, schema: any, isMdx: boolean) {
       data.bullets.forEach((b: any) => checkTags(filePath, b.tags || []));
     }
     if (data.media) checkMedia(filePath, data.media);
-    
+
     // Check ID matches filename for specific entities (excluding profile.yml, etc)
     if (data.id && !filePath.includes("profile.yml")) {
       const expectedId = path.basename(filePath, path.extname(filePath));
@@ -136,34 +144,33 @@ const profilePath = path.join(CONTENT_DIR, "profile.yml");
 if (fs.existsSync(profilePath)) validateFile(profilePath, Profile, false);
 
 const resumeProfiles = getFiles(path.join(CONTENT_DIR, "resume-profiles"), [".yml"]);
-resumeProfiles.forEach(f => validateFile(f, ResumeProfile, false));
+resumeProfiles.forEach((f) => validateFile(f, ResumeProfile, false));
 
 // 3. Validate MDX Entities (Projects, Story, Hackathons)
 const projects = getFiles(path.join(CONTENT_DIR, "projects"), [".mdx"]);
-projects.forEach(f => validateFile(f, Project, true));
+projects.forEach((f) => validateFile(f, Project, true));
 
 const storyChapters = getFiles(path.join(CONTENT_DIR, "story"), [".mdx"]);
-storyChapters.forEach(f => validateFile(f, StoryChapter, true));
+storyChapters.forEach((f) => validateFile(f, StoryChapter, true));
 
 const hackathons = getFiles(path.join(CONTENT_DIR, "hackathons"), [".mdx"]);
-hackathons.forEach(f => validateFile(f, Hackathon, true));
+hackathons.forEach((f) => validateFile(f, Hackathon, true));
 
 // 4. Validate YAML Entities (Experience, Education, etc)
 const experiences = getFiles(path.join(CONTENT_DIR, "experience"), [".yml"]);
-experiences.forEach(f => validateFile(f, Experience, false));
+experiences.forEach((f) => validateFile(f, Experience, false));
 
 const educations = getFiles(path.join(CONTENT_DIR, "education"), [".yml"]);
-educations.forEach(f => validateFile(f, Education, false));
+educations.forEach((f) => validateFile(f, Education, false));
 
 const certs = getFiles(path.join(CONTENT_DIR, "certifications"), [".yml"]);
-certs.forEach(f => validateFile(f, Certification, false));
+certs.forEach((f) => validateFile(f, Certification, false));
 
 const achievements = getFiles(path.join(CONTENT_DIR, "achievements"), [".yml"]);
-achievements.forEach(f => validateFile(f, Achievement, false));
+achievements.forEach((f) => validateFile(f, Achievement, false));
 
 const publications = getFiles(path.join(CONTENT_DIR, "publications"), [".yml"]);
-publications.forEach(f => validateFile(f, Publication, false));
-
+publications.forEach((f) => validateFile(f, Publication, false));
 
 if (hasErrors) {
   console.error("\n❌ Content validation failed.");

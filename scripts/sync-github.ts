@@ -16,6 +16,6 @@
 
 console.log(
   "sync:github — Phase 0 stub.\n" +
-  "Phase 6 will implement GitHub API sync → content/generated/github.json.",
+    "Phase 6 will implement GitHub API sync → content/generated/github.json.",
 );
 process.exit(0);

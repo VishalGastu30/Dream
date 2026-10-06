@@ -17,6 +17,6 @@
 
 console.log(
   "check:assets — Phase 0 stub. No assets to check yet.\n" +
-  "Phase 2 will implement manifest validation + attribution generation.",
+    "Phase 2 will implement manifest validation + attribution generation.",
 );
 process.exit(0);

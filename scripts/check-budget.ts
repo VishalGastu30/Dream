@@ -18,6 +18,6 @@
 
 console.log(
   "check:budget — Phase 0 stub. All budgets assumed OK.\n" +
-  "Phase 3 will implement full bundle + free-tier tripwire checks.",
+    "Phase 3 will implement full bundle + free-tier tripwire checks.",
 );
 process.exit(0);
