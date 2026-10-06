@@ -19,8 +19,12 @@ export const metadata: Metadata = {
   description: "AI Engineer & Software Developer",
 };
 
+import { CanvasWrapper } from "@/canvas/CanvasWrapper";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { QualityControl } from "@/components/QualityControl";
+import { SkipIntro } from "@/components/SkipIntro";
+import { ScrollProvider } from "@/contexts/ScrollContext";
 import { ViewProvider } from "@/contexts/ViewContext";
 
 export default function RootLayout({
@@ -37,10 +41,15 @@ export default function RootLayout({
         >
           Skip to content
         </a>
+        <CanvasWrapper />
         <ViewProvider>
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
+          <ScrollProvider>
+            <Header />
+            <main id="main-content">{children}</main>
+            <Footer />
+            <QualityControl />
+            <SkipIntro />
+          </ScrollProvider>
         </ViewProvider>
       </body>
     </html>
