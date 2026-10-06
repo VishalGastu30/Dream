@@ -1,17 +1,20 @@
 "use client";
 
+import { CinematicLoader } from "@/components/CinematicLoader";
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import { SceneRouter } from "./SceneRouter";
+import { useScrollProgress } from "./hooks/useScrollProgress";
 import { useSceneStore } from "./store/scene.store";
 import { detectCapability } from "./tiers/capability";
 import { TIERS } from "./tiers/constants";
 import { FpsMonitor } from "./utils/FpsMonitor";
-import { CinematicLoader } from "@/components/CinematicLoader";
 
 export default function CanvasRoot() {
   const { tier, setTier, quality } = useSceneStore();
   const [isReady, setIsReady] = useState(false);
+
+  useScrollProgress();
 
   useEffect(() => {
     let mounted = true;
@@ -52,10 +55,13 @@ export default function CanvasRoot() {
       <CinematicLoader />
       <Canvas
         dpr={dpr as [number, number]}
-        frameloop="demand"
+        frameloop="always"
         camera={{ position: [0, 0, 10], fov: 45 }}
-        style={{ pointerEvents: "auto", background: "transparent" }}
+        gl={{ antialias: activeTier === TIERS.HIGH, alpha: true }}
+        style={{ pointerEvents: "none", background: "transparent" }}
       >
+        <ambientLight intensity={0.05} />
+        <pointLight position={[0, 0, 5]} intensity={1} color="#6EE7F9" />
         <SceneRouter />
         {quality === "auto" && <FpsMonitor />}
       </Canvas>

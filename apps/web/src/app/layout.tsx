@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 };
 
 import { CanvasWrapper } from "@/canvas/CanvasWrapper";
+import { CommandPalette } from "@/components/CommandPalette";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { QualityControl } from "@/components/QualityControl";
@@ -41,14 +42,15 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <CanvasWrapper />
         <ViewProvider>
           <ScrollProvider>
+            <CanvasWrapper />
             <Header />
             <main id="main-content">{children}</main>
             <Footer />
             <QualityControl />
             <SkipIntro />
+            <CommandPalette />
           </ScrollProvider>
         </ViewProvider>
       </body>

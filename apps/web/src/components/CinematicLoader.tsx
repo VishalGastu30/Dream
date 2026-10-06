@@ -4,7 +4,7 @@ import { useProgress } from "@react-three/drei";
 import { useEffect, useState } from "react";
 
 export function CinematicLoader() {
-  const { active, progress, errors, item, loaded, total } = useProgress();
+  const { active, progress, errors, item } = useProgress();
   const [show, setShow] = useState(true);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export function CinematicLoader() {
           <span>{Math.round(progress)}%</span>
         </div>
         <div className="h-1 w-full bg-border rounded overflow-hidden">
-          <div 
+          <div
             className="h-full bg-signal transition-all duration-200 ease-out"
             style={{ width: `${progress}%` }}
           />
