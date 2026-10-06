@@ -7,17 +7,22 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "biome check .",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@dream/resume-engine": "workspace:^",
+    "@dream/schema": "workspace:^",
     "next": "15.0.3",
     "react": "^19.0.0-rc-66855b96-20241106",
-    "react-dom": "^19.0.0-rc-66855b96-20241106"
+    "react-dom": "^19.0.0-rc-66855b96-20241106",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@playwright/test": "^1.48.0",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.6.1",
