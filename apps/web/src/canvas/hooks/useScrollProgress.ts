@@ -13,7 +13,7 @@ export function useScrollProgress() {
 
     if (lenis) {
       // Lenis smooth scroll progress
-      const onScroll = (e: any) => {
+      const onScroll = (e: { progress: number }) => {
         setDotProgress(e.progress);
       };
       lenis.on("scroll", onScroll);

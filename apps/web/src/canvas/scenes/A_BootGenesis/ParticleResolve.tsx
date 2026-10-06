@@ -1,9 +1,11 @@
 import { Sparkles, Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+
 import { useSceneStore } from "../../store/scene.store";
 
 export function ParticleResolve() {
+  // biome-ignore lint/suspicious/noExplicitAny: Temporary fix for missing troika-three-text type
   const textRef = useRef<any>(null);
   const { dotProgress } = useSceneStore();
 
