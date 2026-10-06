@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export function FpsMonitor() {
   const [fps, setFps] = useState(0);
@@ -24,19 +24,21 @@ export function FpsMonitor() {
   }, []);
 
   return (
-    <div style={{
-      position: 'absolute',
-      top: 10,
-      left: 10,
-      background: 'rgba(0,0,0,0.8)',
-      color: '#0f0',
-      padding: '8px 12px',
-      fontFamily: 'monospace',
-      fontSize: '16px',
-      zIndex: 1000,
-      pointerEvents: 'none',
-      borderRadius: '4px'
-    }}>
+    <div
+      style={{
+        position: "absolute",
+        top: 10,
+        left: 10,
+        background: "rgba(0,0,0,0.8)",
+        color: "#0f0",
+        padding: "8px 12px",
+        fontFamily: "monospace",
+        fontSize: "16px",
+        zIndex: 1000,
+        pointerEvents: "none",
+        borderRadius: "4px",
+      }}
+    >
       FPS: {fps}
     </div>
   );

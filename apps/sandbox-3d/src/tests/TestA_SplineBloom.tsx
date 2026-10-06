@@ -1,7 +1,7 @@
-import { useRef, useMemo } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { EffectComposer, Bloom } from '@react-three/postprocessing';
-import * as THREE from 'three';
+import { useRef, useMemo } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import * as THREE from "three";
 
 function SplineCurve() {
   const curve = useMemo(() => {
@@ -41,7 +41,7 @@ function SplineCurve() {
 
 export default function TestA() {
   return (
-    <Canvas style={{ background: '#050505', width: '100vw', height: '100vh' }}>
+    <Canvas style={{ background: "#050505", width: "100vw", height: "100vh" }}>
       <ambientLight intensity={0.2} />
       <SplineCurve />
       <EffectComposer disableNormalPass>
