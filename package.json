@@ -16,6 +16,7 @@
     "validate:content": "tsx scripts/validate-content.ts",
     "build:career": "tsx scripts/build-career.ts",
     "build:resumes": "tsx scripts/build-resumes.ts",
+    "sync:github": "tsx scripts/sync-github.ts",
     "check:budget": "tsx scripts/check-budget.ts",
     "check:assets": "tsx scripts/check-assets.ts",
     "test:e2e": "pnpm --filter web test:e2e",
@@ -29,6 +30,7 @@
     "js-yaml": "^5.4.2",
     "puppeteer": "^25.12.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.6.0"
+    "typescript": "^5.6.0",
+    "yaml": "^2.6.0"
   }
 }
