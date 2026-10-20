@@ -10,3 +10,4 @@ export * from "./story-chapter.js";
 export * from "./profile.js";
 export * from "./resume-profile.js";
 export * from "./tags.js";
+export * from "./github.js";
