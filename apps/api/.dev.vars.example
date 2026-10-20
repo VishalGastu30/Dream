@@ -1,0 +1,13 @@
+# apps/api/.dev.vars
+# Local development secrets for wrangler dev --local
+# NEVER commit the actual .dev.vars file — only this .dev.vars.example
+# Copy to .dev.vars and fill in real values:
+#   cp apps/api/.dev.vars.example apps/api/.dev.vars
+
+SITE_URL=http://localhost:3000
+ENVIRONMENT=development
+GITHUB_OAUTH_CLIENT_ID=your_github_oauth_client_id
+GITHUB_OAUTH_CLIENT_SECRET=your_github_oauth_client_secret
+AUTH_SECRET=replace_with_32_random_bytes
+OWNER_GITHUB_ID=your_numeric_github_user_id
+GROQ_API_KEY=your_groq_api_key

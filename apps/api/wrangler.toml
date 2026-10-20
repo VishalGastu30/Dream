@@ -8,17 +8,22 @@
 
 name = "dream-api"
 main = "src/index.ts"
-# Update compatibility_date to current date at implementation time
-compatibility_date = "2026-10-01"
+compatibility_date = "2026-10-20"
+compatibility_flags = ["nodejs_compat"]
 
 [[d1_databases]]
 binding = "DB"
 database_name = "dream-db"
 # Fill in after: wrangler d1 create dream-db
 database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "src/db/migrations"
 
 [vars]
 # Non-secret variables — safe to commit
 # Secrets (GROQ_API_KEY, GITHUB_OAUTH_*, AUTH_SECRET, OWNER_GITHUB_ID, TURNSTILE_SECRET)
 # are set via: wrangler secret put <SECRET_NAME>
 ENVIRONMENT = "production"
+# Override for local dev in .dev.vars:
+#   SITE_URL=http://localhost:3000
+#   ENVIRONMENT=development
+SITE_URL = "https://vishalgastu.pages.dev"
