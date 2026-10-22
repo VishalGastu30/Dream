@@ -13,8 +13,8 @@ const contactSchema = z.object({
   name: z.string().min(1).max(80),
   email: z.string().email().max(254),
   message: z.string().min(10).max(2000),
-  // Honeypot — must be empty
-  website: z.string().max(0).optional(),
+  // Honeypot — any value triggers silent rejection (checked in handler)
+  website: z.string().optional(),
 });
 
 export const contactRouter = new Hono<{ Bindings: Env }>();
