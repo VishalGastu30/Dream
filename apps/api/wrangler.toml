@@ -19,11 +19,15 @@ database_id = "REPLACE_WITH_D1_DATABASE_ID"
 migrations_dir = "src/db/migrations"
 
 [vars]
-# Non-secret variables — safe to commit
-# Secrets (GROQ_API_KEY, GITHUB_OAUTH_*, AUTH_SECRET, OWNER_GITHUB_ID, TURNSTILE_SECRET)
+# Non-secret vars — safe to commit.
+# Secrets (AUTH_SECRET, OWNER_GITHUB_ID, GITHUB_OAUTH_CLIENT_ID,
+#          GITHUB_OAUTH_CLIENT_SECRET, GROQ_API_KEY, TURNSTILE_SECRET)
 # are set via: wrangler secret put <SECRET_NAME>
 ENVIRONMENT = "production"
-# Override for local dev in .dev.vars:
-#   SITE_URL=http://localhost:3000
-#   ENVIRONMENT=development
 SITE_URL = "https://vishalgastu.pages.dev"
+
+# AI layer (Phase 7)
+# Verify current free models at console.groq.com ⚠️
+GROQ_MODEL = "llama-3.1-8b-instant"
+ENABLE_ASK_ME = "false"
+AI_DAILY_CAP = "200"
