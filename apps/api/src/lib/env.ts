@@ -14,12 +14,26 @@ export interface Env {
   /** Non-secret environment label */
   ENVIRONMENT: "production" | "development";
 
-  // --- Secrets (set via wrangler secret put) ---
-  GROQ_API_KEY: string;
-  GITHUB_OAUTH_CLIENT_ID: string;
-  GITHUB_OAUTH_CLIENT_SECRET: string;
+  // --- Auth secrets (set via wrangler secret put) ---
+  /** 32+ random bytes for signing session cookies (HMAC-SHA-256) */
   AUTH_SECRET: string;
-  /** Numeric GitHub user ID of the portfolio owner */
+  /** GitHub numeric user ID of the portfolio owner */
   OWNER_GITHUB_ID: string;
+  /** GitHub OAuth App Client ID */
+  GITHUB_OAUTH_CLIENT_ID: string;
+  /** GitHub OAuth App Client Secret */
+  GITHUB_OAUTH_CLIENT_SECRET: string;
+
+  // --- Dev bypass (set in .dev.vars only, NEVER in production) ---
+  /** Set to "true" in .dev.vars to enable /api/auth/dev-login endpoint */
+  DEV_BYPASS_AUTH?: string;
+
+  // --- AI (Phase 7) ---
+  GROQ_API_KEY: string;
+  GROQ_MODEL: string;
+  ENABLE_ASK_ME: string;
+  AI_DAILY_CAP: string;
+
+  // --- Spam prevention ---
   TURNSTILE_SECRET?: string;
 }
