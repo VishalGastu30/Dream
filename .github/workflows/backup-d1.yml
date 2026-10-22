@@ -1,0 +1,48 @@
+name: Backup D1 database
+
+on:
+  schedule:
+    # Every Sunday at 03:00 UTC (after GitHub sync)
+    - cron: "0 3 * * 0"
+  workflow_dispatch:
+
+jobs:
+  backup:
+    name: Export D1 → committed JSON snapshots
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      # Export approved testimonials via the admin API
+      # Requires CLOUDFLARE_API_TOKEN and the Worker to be deployed (Phase 9)
+      # In Phase 6 (pre-deploy), this job is a placeholder and will succeed vacuously.
+      - name: Export testimonials snapshot
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "⏭ Skipping export — CLOUDFLARE_API_TOKEN not set (pre-deployment mode)"
+            exit 0
+          fi
+          API_URL="${WORKER_URL}" SESSION_COOKIE="${WORKER_SESSION}" pnpm export:testimonials
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          WORKER_SESSION: ${{ secrets.WORKER_SESSION }}
+
+      - name: Commit snapshots
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): sync testimonials snapshot [skip ci]"
+          file_pattern: content/testimonials.snapshot.json
