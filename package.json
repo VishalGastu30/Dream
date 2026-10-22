@@ -17,6 +17,7 @@
     "build:career": "tsx scripts/build-career.ts",
     "build:resumes": "tsx scripts/build-resumes.ts",
     "sync:github": "tsx scripts/sync-github.ts",
+    "export:testimonials": "tsx scripts/export-testimonials.ts",
     "check:budget": "tsx scripts/check-budget.ts",
     "check:assets": "tsx scripts/check-assets.ts",
     "test:e2e": "pnpm --filter web test:e2e",
