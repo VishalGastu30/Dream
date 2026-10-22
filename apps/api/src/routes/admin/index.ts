@@ -1,24 +1,47 @@
 /**
  * apps/api/src/routes/admin/index.ts
- * Admin route stubs — protected by owner-only auth (P6-02).
- * For now returns 501 to unblock scaffold.
- * Full implementation in P6-02 through P6-08.
+ * Mounts all admin sub-routers under /api/admin/*.
+ * Protected by ownerOnly() middleware.
  */
+
 import { Hono } from "hono";
 import type { Env } from "../../lib/env.ts";
+import { ownerOnly } from "../../middleware/owner-only.ts";
+import { adminContactRouter } from "./contact.ts";
+import { exportRouter } from "./export.ts";
+import { invitesRouter } from "./invites.ts";
+import { adminTestimonialsRouter } from "./testimonials.ts";
+import { usageRouter } from "./usage.ts";
 
 export const adminRouter = new Hono<{ Bindings: Env }>();
 
-// Temporary 401 guard until Better Auth is wired in P6-02
-adminRouter.use("*", async (c, next) => {
-  // Phase 6-02 will replace this with real session verification
-  const authHeader = c.req.header("Authorization");
-  if (!authHeader) {
-    return c.json({ error: "Unauthorized" }, 401);
-  }
-  await next();
-});
+// All admin routes require owner session
+adminRouter.use("*", ownerOnly());
 
-adminRouter.get("/", (c) => {
-  return c.json({ message: "Studio admin — Phase 6-02 will add full auth" });
+// Sub-routers
+adminRouter.route("/invites", invitesRouter);
+adminRouter.route("/testimonials", adminTestimonialsRouter);
+adminRouter.route("/contact", adminContactRouter);
+adminRouter.route("/export", exportRouter);
+adminRouter.route("/usage", usageRouter);
+
+// Dashboard summary
+adminRouter.get("/", async (c) => {
+  const [pendingT, unreadC, todayAI] = await Promise.all([
+    c.env.DB.prepare("SELECT COUNT(*) as count FROM testimonials WHERE status = 'pending'").first<{
+      count: number;
+    }>(),
+    c.env.DB.prepare("SELECT COUNT(*) as count FROM contact_messages WHERE read = 0").first<{
+      count: number;
+    }>(),
+    c.env.DB.prepare("SELECT count FROM ai_usage WHERE date = date('now')").first<{
+      count: number;
+    }>(),
+  ]);
+
+  return c.json({
+    pending_testimonials: pendingT?.count ?? 0,
+    unread_messages: unreadC?.count ?? 0,
+    ai_requests_today: todayAI?.count ?? 0,
+  });
 });
