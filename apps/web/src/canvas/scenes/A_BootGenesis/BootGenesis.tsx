@@ -1,14 +1,15 @@
+import { useView } from "@/contexts/ViewContext";
 import { useSceneStore } from "../../store/scene.store";
 import { Dot } from "./Dot";
-import { EntryButtons } from "./EntryButtons";
 import { KeywordDrift } from "./KeywordDrift";
 import { ParticleResolve } from "./ParticleResolve";
 
 export function BootGenesis() {
   const { chapter } = useSceneStore();
+  const { view } = useView();
 
-  // If we've moved completely past chapter 0 (e.g. Journey or Projects), we might want to hide this scene entirely for performance.
-  // For now, we always render but components handle their own fade out based on dotProgress.
+  // Only render this scene in cinematic mode
+  if (view !== "cinematic") return null;
   if (chapter > 1) return null;
 
   return (
@@ -16,7 +17,6 @@ export function BootGenesis() {
       <Dot />
       <KeywordDrift />
       <ParticleResolve />
-      <EntryButtons />
     </group>
   );
 }
