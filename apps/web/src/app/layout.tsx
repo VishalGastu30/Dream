@@ -16,15 +16,23 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Vishal Gastu — Digital Universe",
-  description: "AI Engineer & Software Developer",
+  description:
+    "AI Engineer & Software Developer. Creating what doesn't exist yet, and building it well enough to change what comes next.",
+  keywords: ["AI Engineer", "Software Developer", "Portfolio", "Three.js", "Python", "TypeScript"],
+  openGraph: {
+    title: "Vishal Gastu — Digital Universe",
+    description: "AI Engineer & Software Developer based in Chennai.",
+    type: "website",
+  },
 };
 
 import { CanvasWrapper } from "@/canvas/CanvasWrapper";
+import { BootScreen } from "@/components/BootScreen";
 import { CommandPalette } from "@/components/CommandPalette";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { QualityControl } from "@/components/QualityControl";
-import { SkipIntro } from "@/components/SkipIntro";
+import { ViewAwareLayout } from "@/components/ViewAwareLayout";
 import { ScrollProvider } from "@/contexts/ScrollContext";
 import { ViewProvider } from "@/contexts/ViewContext";
 
@@ -44,12 +52,21 @@ export default function RootLayout({
         </a>
         <ViewProvider>
           <ScrollProvider>
+            {/* Boot screen — z-999, fullscreen, shown once per session */}
+            <BootScreen />
+
+            {/* Always-on Three.js canvas — z-0, decorative or interactive */}
             <CanvasWrapper />
-            <Header />
-            <main id="main-content">{children}</main>
-            <Footer />
+
+            {/* View-aware layout — hides/shows HTML based on cinematic vs professional */}
+            <ViewAwareLayout>
+              <Header />
+              <main id="main-content">{children}</main>
+              <Footer />
+            </ViewAwareLayout>
+
+            {/* Global UI overlays */}
             <QualityControl />
-            <SkipIntro />
             <CommandPalette />
           </ScrollProvider>
         </ViewProvider>
