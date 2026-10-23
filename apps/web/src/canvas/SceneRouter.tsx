@@ -1,3 +1,4 @@
+import { useView } from "@/contexts/ViewContext";
 import { PostEffects } from "./postprocessing/PostEffects";
 import { BootGenesis } from "./scenes/A_BootGenesis/BootGenesis";
 import { JourneySpline } from "./scenes/B_Journey/JourneySpline";
@@ -7,6 +8,13 @@ import { useSceneStore } from "./store/scene.store";
 
 export function SceneRouter() {
   const { chapter } = useSceneStore();
+  const { view } = useView();
+
+  // All cinematic scenes are only active in cinematic mode
+  if (view !== "cinematic") {
+    // In professional mode: only post-effects (bloom/vignette on the background)
+    return <PostEffects />;
+  }
 
   return (
     <group>
@@ -22,7 +30,7 @@ export function SceneRouter() {
       {/* Scene D: Outro — Chapter 3 */}
       {chapter >= 2 && <Outro />}
 
-      {/* Post-processing effects, tier-gated */}
+      {/* Post-processing effects */}
       <PostEffects />
     </group>
   );
