@@ -10,9 +10,17 @@
     --color-accent-dim: rgba(242, 244, 248, 0.1);
     --color-muted: #888888;
     --color-border: #333333;
-  }
+    --color-signal: #6EE7F9;
 
-  /* Optional: Light mode tokens if needed later, but cinematic layer defaults to dark */
+    /* Cinematic theme tokens (used by 3D canvas overlays) */
+    --bg-0: #050505;
+    --bg-1: #0a0a0a;
+    --bg-2: #141414;
+    --text-0: #f2f4f8;
+    --text-1: #aaaaaa;
+    --text-2: #555555;
+    --signal: #6EE7F9;
+  }
 
   html,
   body {
@@ -25,4 +33,60 @@
   *:focus-visible {
     @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
   }
+
+  /* Hide scrollbar utility */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
+
+/* ─── Boot Screen Keyframes ────────────────────────────────────────────────── */
+
+@keyframes bootOrbPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 40px 20px rgba(110, 231, 249, 0.55),
+      0 0 100px 50px rgba(110, 231, 249, 0.25),
+      0 0 250px 120px rgba(110, 231, 249, 0.08);
+  }
+  50% {
+    transform: scale(1.07);
+    box-shadow:
+      0 0 55px 28px rgba(110, 231, 249, 0.7),
+      0 0 140px 70px rgba(110, 231, 249, 0.35),
+      0 0 320px 160px rgba(110, 231, 249, 0.12);
+  }
+}
+
+@keyframes bootCursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes bootStatusPulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 0.8; }
+}
+
+@keyframes bootDrift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-110vh); }
+}
+
+/* ─── Cinematic Canvas Classes ──────────────────────────────────────────────── */
+
+/* Classes used by Three.js Html overlays */
+.bg-bg-0 { background-color: var(--bg-0); }
+.bg-bg-1 { background-color: var(--bg-1); }
+.bg-bg-2 { background-color: var(--bg-2); }
+.text-text-0 { color: var(--text-0); }
+.text-text-1 { color: var(--text-1); }
+.text-text-2 { color: var(--text-2); }
+.text-signal  { color: var(--signal); }
+.border-border { border-color: var(--color-border); }
+.bg-bg-1\/90 { background-color: rgba(10, 10, 10, 0.9); }
