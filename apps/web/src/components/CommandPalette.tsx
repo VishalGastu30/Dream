@@ -1,15 +1,26 @@
 "use client";
 
-import { useSceneStore } from "@/canvas/store/scene.store";
-import { useView } from "@/contexts/ViewContext";
+/**
+ * components/CommandPalette.tsx
+ *
+ * Keyboard-accessible command palette (Ctrl/Cmd + K).
+ * X0: navigation-only commands; quality and view commands will
+ * be wired to the experience Director in X1+.
+ */
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+
+const COMMANDS = [
+  { label: "Go to Home", path: "/" },
+  { label: "Go to Projects", path: "/projects" },
+  { label: "Go to Experience", path: "/experience" },
+  { label: "Go to Resume Forge", path: "/forge" },
+  { label: "Go to Contact", path: "/contact" },
+];
 
 export function CommandPalette() {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const { setQuality } = useSceneStore();
-  const { view, setView } = useView();
   const router = useRouter();
 
   useEffect(() => {
@@ -28,31 +39,13 @@ export function CommandPalette() {
 
   if (!isOpen) return null;
 
-  const handleAction = (action: () => void) => {
-    action();
+  const filtered = COMMANDS.filter((c) => c.label.toLowerCase().includes(query.toLowerCase()));
+
+  const handleNav = (path: string) => {
+    router.push(path);
     setIsOpen(false);
+    setQuery("");
   };
-
-  const commands = [
-    {
-      label: "Switch to Professional View",
-      action: () => setView(view === "professional" ? "cinematic" : "professional"),
-      show: view !== "professional",
-    },
-    {
-      label: "Switch to Cinematic View",
-      action: () => setView("cinematic"),
-      show: view === "professional",
-    },
-    { label: "Go to Home", action: () => router.push("/") },
-    { label: "Go to Projects", action: () => router.push("/projects") },
-    { label: "Go to Experience", action: () => router.push("/experience") },
-    { label: "Set Quality: High", action: () => setQuality("high") },
-    { label: "Set Quality: Auto", action: () => setQuality("auto") },
-    { label: "Set Quality: Low", action: () => setQuality("low") },
-  ].filter((c) => c.show !== false);
-
-  const filtered = commands.filter((c) => c.label.toLowerCase().includes(query.toLowerCase()));
 
   return (
     <dialog
@@ -78,11 +71,11 @@ export function CommandPalette() {
         />
         <div className="max-h-96 overflow-y-auto p-2 flex flex-col gap-1">
           {filtered.length > 0 ? (
-            filtered.map((cmd, _i) => (
+            filtered.map((cmd) => (
               <button
                 key={cmd.label}
                 className="w-full text-left px-3 py-3 rounded-lg hover:bg-bg-2 text-text-1 hover:text-text-0 focus:bg-bg-2 focus:outline-none transition-colors"
-                onClick={() => handleAction(cmd.action)}
+                onClick={() => handleNav(cmd.path)}
                 type="button"
               >
                 {cmd.label}
@@ -95,8 +88,8 @@ export function CommandPalette() {
           )}
         </div>
         <div className="bg-bg-2/50 px-4 py-2 border-t border-border flex justify-between items-center text-xs text-text-2">
-          <span>Navigate with ⬆️ ⬇️ (Coming soon)</span>
-          <span>esc to close</span>
+          <span>Press Enter to navigate</span>
+          <span>Esc to close</span>
         </div>
       </div>
     </dialog>
