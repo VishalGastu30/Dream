@@ -47,7 +47,8 @@
       "dist",
       "pnpm-lock.yaml",
       "content/generated",
-      "*.lock"
+      "*.lock",
+      "**/src/_legacy"
     ]
   }
 }
