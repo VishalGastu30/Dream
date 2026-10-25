@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ViewToggle } from "./ViewToggle";
 
 export function Header() {
   return (
@@ -37,10 +36,6 @@ export function Header() {
             Resume Forge
           </Link>
         </nav>
-
-        <div className="flex items-center">
-          <ViewToggle />
-        </div>
       </div>
     </header>
   );
