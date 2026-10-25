@@ -15,26 +15,22 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vishal Gastu — Digital Universe",
+  title: "Vishal Gastu — AI Engineer & Software Developer",
   description:
     "AI Engineer & Software Developer. Creating what doesn't exist yet, and building it well enough to change what comes next.",
-  keywords: ["AI Engineer", "Software Developer", "Portfolio", "Three.js", "Python", "TypeScript"],
+  keywords: ["AI Engineer", "Software Developer", "Portfolio", "Python", "TypeScript", "ML"],
   openGraph: {
-    title: "Vishal Gastu — Digital Universe",
+    title: "Vishal Gastu — AI Engineer & Software Developer",
     description: "AI Engineer & Software Developer based in Chennai.",
     type: "website",
   },
 };
 
 import { CanvasWrapper } from "@/canvas/CanvasWrapper";
-import { BootScreen } from "@/components/BootScreen";
 import { CommandPalette } from "@/components/CommandPalette";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { QualityControl } from "@/components/QualityControl";
-import { ViewAwareLayout } from "@/components/ViewAwareLayout";
-import { ScrollProvider } from "@/contexts/ScrollContext";
-import { ViewProvider } from "@/contexts/ViewContext";
+import { SkipLink } from "@/components/SkipLink";
 
 export default function RootLayout({
   children,
@@ -43,33 +39,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${jetbrainsMono.variable}`}>
+      {/*
+       * X0: first-paint black layer — CSS-only, renders before JS.
+       * An inline script in X1 will set data-intro="pending" on <html>
+       * to keep this black overlay visible while the intro plays.
+       * For now it is simply absent so the Reader is always visible.
+       */}
       <body>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-background focus:text-foreground"
-        >
-          Skip to content
-        </a>
-        <ViewProvider>
-          <ScrollProvider>
-            {/* Boot screen — z-999, fullscreen, shown once per session */}
-            <BootScreen />
+        <SkipLink />
 
-            {/* Always-on Three.js canvas — z-0, decorative or interactive */}
-            <CanvasWrapper />
+        {/* X1: Stage (canvas) will replace this null placeholder */}
+        <CanvasWrapper />
 
-            {/* View-aware layout — hides/shows HTML based on cinematic vs professional */}
-            <ViewAwareLayout>
-              <Header />
-              <main id="main-content">{children}</main>
-              <Footer />
-            </ViewAwareLayout>
+        {/* Reader — always visible in X0 */}
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
 
-            {/* Global UI overlays */}
-            <QualityControl />
-            <CommandPalette />
-          </ScrollProvider>
-        </ViewProvider>
+        {/* Global UI overlays that survive every state */}
+        <CommandPalette />
       </body>
     </html>
   );
